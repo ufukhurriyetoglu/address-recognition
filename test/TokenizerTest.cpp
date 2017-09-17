@@ -17,19 +17,17 @@ TEST_CASE("Tokenizer - not existing input file")
 TEST_CASE("Tokenizer - existing input file"){
     Tokenizer t("../../test/data/dummyTestInput.txt");
     REQUIRE(t.parseFile() == 0);
-}
+    REQUIRE(t.getTokensSize() == 5);
 
-TEST_CASE("Tokenizer - empty input file"){
-    Tokenizer t("../../test/data/emptyTestInput.txt");
+    t = Tokenizer("../../test/data/emptyTestInput.txt");
     REQUIRE(t.parseFile() == 0);
-}
+    REQUIRE(t.getTokensSize() == 0);
 
-TEST_CASE("Tokenizer - multiple spaces input file"){
-    Tokenizer t("../../test/data/mtpleTestInput.txt");
+    t = Tokenizer("../../test/data/mtpleTestInput.txt");
     REQUIRE(t.parseFile() == 0);
-}
+    REQUIRE(t.getTokensSize() == 3);
 
-TEST_CASE("Tokenizer - no spaces input file"){
-    Tokenizer t("../../test/data/nospacesTestInput.txt");
+    t = Tokenizer("../../test/data/nospacesTestInput.txt");
     REQUIRE(t.parseFile() == 0);
+    REQUIRE(t.getTokensSize() == 1);
 }

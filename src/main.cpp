@@ -21,10 +21,6 @@ int main(int _argc, char **_argv){
         }
     }
 
-    if(inFilePath.empty()){
-        return 1;
-    }
-
     Tokenizer t(inFilePath);
     if(t.parseFile()){
         return 1;

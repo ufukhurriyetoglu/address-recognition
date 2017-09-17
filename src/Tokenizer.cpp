@@ -1,5 +1,6 @@
 #include <iostream>
 
+
 #include "Tokenizer.hpp"
 
 using address_recognition::Tokenizer;
@@ -11,36 +12,40 @@ Tokenizer::Tokenizer(const string &_fileName) {
 }
 
 int Tokenizer::parseFile() {
-    std::cout << "reading : " << this->m_fileName << std::endl;
-
     if (!m_inputFile.is_open()) {
         std::cerr << "unable to open: " << this->m_fileName << std::endl;
         return 1;
     }
 
-    string token = this->readNext();
-    while (!token.empty()) {
-        this->m_tokens.push_back(Token(token));
-        token = this->readNext();
-    }
+    auto handleToken = [&](string &_token) {
+        if (!_token.empty()) {
+            this->m_tokens.push_back(Token(_token));
+            _token.clear();
+        }
+    };
 
-    return 0;
-}
+    auto isSeparator = [&](char c) -> bool {
+        if (c == ' ' ||
+            c == ';' ||
+            c == '\n' ||
+            c == ',' ||
+            c == ':') {
+            return true;
+        } else {
+            return false;
+        }
+    };
 
-string Tokenizer::readNext() {
     string token;
     char c;
     while (this->m_inputFile.get(c)) {
-        if (c != ' ' &&
-            c != ';' &&
-            c != '\n' &&
-            c != ',' &&
-            c != ':' &&
-            c != EOF) {
-            token += c;
+        if (isSeparator(c)) {
+            handleToken(token);
         } else {
-            return token;
+            token += c;
         }
     }
-    return token;
+    handleToken(token);
+
+    return 0;
 }
