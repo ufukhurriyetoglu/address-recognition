@@ -3,6 +3,8 @@ set(PROJECT_NAME address-recognition)
 set(PROJECT_LIB address-recognition-lib)
 project (${PROJECT_NAME})
 
+set (CMAKE_CXX_STANDARD 14)
+
 include_directories("include")
 
 file(GLOB SOURCES src/*.cpp include/.hpp)
