@@ -7,6 +7,8 @@ namespace address_recognition{
     public:
         Token(const string &_value);
 
+        bool isZIP();
+
     private:
         string m_value;
     };

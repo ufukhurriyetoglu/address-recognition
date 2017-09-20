@@ -13,18 +13,19 @@ namespace address_recognition {
 
         int parseFile();
 
-        unsigned getTokensSize() {
-            return this->m_tokens.size();
-        }
-
         const vector<Token> &getTokens() {
             return this->m_tokens;
+        }
+
+        const vector<unsigned> &getPossibleZIPs() {
+            return this->m_possibleZIPs;
         }
 
     private:
         string m_fileName;
         ifstream m_inputFile;
         vector<Token> m_tokens;
+        vector<unsigned> m_possibleZIPs;
         bool fileRead = false;
     };
 }

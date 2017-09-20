@@ -20,20 +20,17 @@ int Tokenizer::parseFile() {
     auto handleToken = [&](string &_token) {
         if (!_token.empty()) {
             this->m_tokens.push_back(Token(_token));
+            if (this->m_tokens.back().isZIP()) {
+                this->m_possibleZIPs.push_back(this->m_tokens.size() - 1);
+            }
             _token.clear();
         }
     };
 
     auto isSeparator = [&](char c) -> bool {
-        if (c == ' ' ||
-            c == ';' ||
-            c == '\n' ||
-            c == ',' ||
-            c == ':') {
-            return true;
-        } else {
-            return false;
-        }
+        return (c == ' ' ||
+                c == '\n' ||
+                c == ',');
     };
 
     string token;
