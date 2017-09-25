@@ -7,7 +7,7 @@ set (CMAKE_CXX_STANDARD 14)
 
 include_directories("include")
 
-file(GLOB SOURCES src/*.cpp include/.hpp)
+file(GLOB SOURCES src/*.cpp include/*.hpp)
 list(REMOVE_ITEM SOURCES ${CMAKE_SOURCE_DIR}/src/main.cpp)
 
 add_library(${PROJECT_LIB} STATIC ${SOURCES})

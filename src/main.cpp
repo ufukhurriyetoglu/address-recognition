@@ -3,9 +3,11 @@
 #include <unistd.h>
 
 #include "Tokenizer.hpp"
+#include "Parser.hpp"
 
 using std::string;
 using address_recognition::Tokenizer;
+using address_recognition::Parser;
 
 int main(int _argc, char **_argv) {
     int opt;
@@ -22,9 +24,8 @@ int main(int _argc, char **_argv) {
     }
 
     Tokenizer t(inFilePath);
-    if (t.parseFile()) {
-        return 1;
-    }
+    Parser p(t);
+    p.run();
 
     return 0;
 }
