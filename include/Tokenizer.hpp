@@ -8,16 +8,19 @@ using address_recognition::Token;
 namespace address_recognition {
     class Tokenizer {
     public:
-        Tokenizer(const string &_fileName);
+        explicit Tokenizer(const string &_fileName);
 
-        void getNexToken(std::function<void(const Token &_token)> _callback);
+        void getNexToken(const std::function<void(const Token &_token)> &_callback);
+
+        void getNexToken(const std::function<void(const Token &_token)> &_callback, const string &_separators);
 
         bool isValid() const { return this->m_valid; }
 
     private:
         string m_fileName;
-        ifstream m_inputFile;
-
+        mapped_file_source m_inputFile;
+        boost::iostreams::stream<mapped_file_source> m_is;
+        string m_separators = " ;\n";
         bool m_valid = false;
     };
 }

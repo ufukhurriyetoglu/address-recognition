@@ -26,34 +26,128 @@ TEST_CASE("Tokenizer - existing input file", "[Tokenizer]") {
         tokens.push_back(_token);
     };
 
-    Tokenizer t("../../test/data/dummyTestInput.txt");
-    t.getNexToken(handler);
+    unique_ptr<Tokenizer> t;
+    t = std::make_unique<Tokenizer>("../../test/data/dummyTestInput.txt");
+    t->getNexToken(handler);
     REQUIRE(tokens.size() == 5);
 
     tokens.clear();
-    t = Tokenizer("../../test/data/emptyTestInput.txt");
-    t.getNexToken(handler);
+    t = std::make_unique<Tokenizer>("../../test/data/emptyTestInput.txt");
+    t->getNexToken(handler);
     REQUIRE(tokens.size() == 0);
 
     tokens.clear();
-    t = Tokenizer("../../test/data/mtpleTestInput.txt");
-    t.getNexToken(handler);
+    t = std::make_unique<Tokenizer>("../../test/data/mtpleTestInput.txt");
+    t->getNexToken(handler);
     REQUIRE(tokens.size() == 3);
 
     tokens.clear();
-    t = Tokenizer("../../test/data/nospacesTestInput.txt");
-    t.getNexToken(handler);
+    t = std::make_unique<Tokenizer>("../../test/data/nospacesTestInput.txt");
+    t->getNexToken(handler);
     REQUIRE(tokens.size() == 1);
 }
 
-TEST_CASE("Tokenizer - 5 digit zip") {
-//    Tokenizer t("../../test/data/5digit.txt");
-//    REQUIRE(t.getNexToken() == 0);
-//    REQUIRE(t.getTokens().size() == 3);
-//    REQUIRE(t.getPossibleZIPs().size() == 1);
-//
-//    t = Tokenizer("../../test/data/5digit2.txt");
-//    REQUIRE(t.getNexToken() == 0);
-//    REQUIRE(t.getTokens().size() == 10);
-//    REQUIRE(t.getPossibleZIPs().size() == 2);
+TEST_CASE("Tokenizer.empty_separators") {
+    Tokenizer t("../../test/data/dummyTestInput.txt");
+    REQUIRE(t.isValid());
+
+    bool callbackCalled = false;
+    unsigned numOfTokens = 0;
+    auto handler = [&](const Token &_token) {
+        callbackCalled = true;
+        numOfTokens++;
+    };
+    string seps;
+    t.getNexToken(handler, seps);
+
+    REQUIRE(callbackCalled);
+    REQUIRE(numOfTokens == 1);
+}
+
+TEST_CASE("Tokenizer.set_separators") {
+    Tokenizer t("../../test/data/dummyTestInput.txt");
+    REQUIRE(t.isValid());
+
+    bool callbackCalled = false;
+    unsigned numOfTokens = 0;
+    auto handler = [&](const Token &_token) {
+        callbackCalled = true;
+        numOfTokens++;
+    };
+
+    SECTION("separators are present in file") {
+        string seps = " ";
+        t.getNexToken(handler, seps);
+
+        REQUIRE(callbackCalled);
+        REQUIRE(numOfTokens == 5);
+    }
+
+    callbackCalled = false;
+    numOfTokens = 0;
+
+    SECTION("separators are not in file") {
+        string seps = "#;(";
+        t.getNexToken(handler, seps);
+
+        REQUIRE(callbackCalled);
+        REQUIRE(numOfTokens == 1);
+    }
+}
+
+TEST_CASE("Tokenizer.separators_mixed") {
+    Tokenizer t("../../test/data/separatorTestInput.txt");
+    REQUIRE(t.isValid());
+
+    unsigned numOfTokens = 0;
+    auto handler = [&](const Token &_token) {
+        numOfTokens++;
+    };
+
+    SECTION("default separators") {
+        t.getNexToken(handler);
+        REQUIRE(numOfTokens == 1);
+    }
+
+    numOfTokens = 0;
+    SECTION("empty separators") {
+        string seps;
+        t.getNexToken(handler, seps);
+        REQUIRE(numOfTokens == 1);
+    }
+
+    numOfTokens = 0;
+    SECTION("all used separators") {
+        string seps("#!/");
+        t.getNexToken(handler, seps);
+        REQUIRE(numOfTokens == 4);
+    }
+
+    numOfTokens = 0;
+    SECTION("one of the used separators") {
+        string seps("#");
+        t.getNexToken(handler, seps);
+        REQUIRE(numOfTokens == 2);
+    }
+
+    numOfTokens = 0;
+    SECTION("two of the used separators") {
+        string seps("#!");
+        t.getNexToken(handler, seps);
+        REQUIRE(numOfTokens == 3);
+    }
+}
+
+TEST_CASE("Tokenizer.no_tokens_just_separators") {
+    Tokenizer t("../../test/data/noTokensJustSeps.txt");
+    REQUIRE(t.isValid());
+
+    unsigned numOfTokens = 0;
+    auto handler = [&](const Token &_token) {
+        numOfTokens++;
+    };
+    string seps("!@#$%");
+    t.getNexToken(handler, seps);
+
+    REQUIRE(numOfTokens == 0);
 }
