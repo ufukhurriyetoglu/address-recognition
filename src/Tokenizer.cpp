@@ -8,6 +8,7 @@ using address_recognition::Token;
 Tokenizer::Tokenizer(const string &_fileName) {
     this->m_fileName = _fileName;
     m_inputFile.open(this->m_fileName.c_str());
+    this->m_valid = this->m_inputFile.is_open();
 }
 
 void Tokenizer::getNexToken(std::function<void(const Token &_token)> _callback) {
@@ -25,6 +26,7 @@ void Tokenizer::getNexToken(std::function<void(const Token &_token)> _callback) 
 
     auto isSeparator = [&](char c) -> bool {
         return (c == ' ' ||
+                c == ';' ||
                 c == '\n');
     };
 

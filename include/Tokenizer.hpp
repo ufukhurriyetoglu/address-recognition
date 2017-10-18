@@ -12,8 +12,12 @@ namespace address_recognition {
 
         void getNexToken(std::function<void(const Token &_token)> _callback);
 
+        bool isValid() const { return this->m_valid; }
+
     private:
         string m_fileName;
         ifstream m_inputFile;
+
+        bool m_valid = false;
     };
 }

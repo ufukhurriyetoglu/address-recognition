@@ -4,6 +4,7 @@ set(PROJECT_LIB address-recognition-lib)
 project (${PROJECT_NAME})
 
 set (CMAKE_CXX_STANDARD 14)
+set (CMAKE_CXX_FLAGS "-o3")
 
 include_directories("include")
 

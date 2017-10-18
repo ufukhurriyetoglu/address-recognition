@@ -9,7 +9,7 @@
 using address_recognition::Tokenizer;
 using address_recognition::Token;
 
-TEST_CASE("Tokenizer - not existing input file") {
+TEST_CASE("Tokenizer - not existing input file", "[Tokenizer]") {
     Tokenizer t("");
     bool callbackCalled = false;
     auto callback = [&](const Token &_token) {
@@ -17,9 +17,10 @@ TEST_CASE("Tokenizer - not existing input file") {
     };
     t.getNexToken(callback);
     REQUIRE(!callbackCalled);
+    REQUIRE(!t.isValid());
 }
 
-TEST_CASE("Tokenizer - existing input file") {
+TEST_CASE("Tokenizer - existing input file", "[Tokenizer]") {
     vector<Token> tokens;
     auto handler = [&](const Token &_token) {
         tokens.push_back(_token);
