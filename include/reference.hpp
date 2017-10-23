@@ -15,7 +15,9 @@
 using std::string;
 using std::vector;
 using std::ifstream;
+using std::ofstream;
 using std::unique_ptr;
 using boost::iostreams::mapped_file_source;
+using boost::iostreams::mapped_file;
 using boost::iostreams::stream;
 

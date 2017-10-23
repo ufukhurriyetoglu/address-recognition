@@ -1,0 +1,355 @@
+10000 Praha 10 
+10100 Praha 10 
+10200 Praha 
+10200 Praha 10 
+10300 Praha 10 
+10400 Praha 10 
+10700 Praha 10 
+10900 Praha 10 
+11000 Praha 8 
+11800 Praha 1 
+12800 Praha 2 
+13000 Praha 3 
+14000 Praha 4 
+14100 Praha 10 
+14100 Praha 4 
+14200 Praha 4 
+14300 Praha 4 
+14700 Praha 4 
+14800 Praha 4 
+14900 Praha 4 
+15000 Praha 1 
+15000 Praha 5 
+15200 Praha 
+15200 Praha 5 
+15300 Praha 5 
+15400 Praha 5 
+15500 Praha 5 
+15521 Praha 5 
+15531 Praha 5 
+15600 Praha 5 
+15800 Praha 5 
+15900 Praha 
+15900 Praha 5 
+16000 Praha 6 
+16400 Praha 6 
+16500 Praha 6 
+16900 Praha 6 
+17000 Praha 7 
+17100 Praha 7 
+18100 Praha 8 
+18200 Praha 8 
+18400 Praha 8 
+19000 Praha 9 
+19011 Praha 9 
+19012 Praha 9 
+19016 Praha 9 
+19017 Praha 9 
+19300 Praha 9 
+19600 Praha 9 
+19700 Praha 9 
+19800 Praha 
+19800 Praha 9 
+25001 Brandys nad Labem-Stara Boleslav 
+25001 Drevcice 
+25001 Zapy 
+25001 cakovicky 
+25063 Brazdim 
+25063 Mratin 
+25063 Nova Ves 
+25063 Polerady 
+25063 Sluhy 
+25063 Veleň 
+25063 cakovicky 
+25064 Hovorcovice 
+25064 Mesice 
+25064 Zlonin 
+25065 Basť 
+25065 Boranovice 
+25065 Libeznice 
+25065 Sedlec 
+25066 Zdiby 
+25067 Klecany 
+25067 Vetrusice 
+25068 Husinec 
+25069 Klicany 
+25069 Maslovice 
+25069 Vodochody 
+25070 Odolena Voda 
+25070 Panenske Brezany 
+25070 Postrizin 
+25070 Velika Ves 
+25072 Kojetice 
+25072 Predboj 
+25073 Jenstejn 
+25073 Podolanka 
+25073 Prezletice 
+25073 Radonice 
+25074 Radonice 
+25075 Karany 
+25075 Novy Vestec 
+25081 Nehvizdy 
+25082 Dobrocovice 
+25082 Horousany 
+25082 Kvetnice 
+25082 Tuklaty 
+25082 uvaly 
+25082 sestajovice 
+25083 Zlata 
+25083 skvorec 
+25084 Kvetnice 
+25084 Krenice 
+25084 Sibrina 
+25084 Slustice 
+25087 Mochov 
+25087 Vysehorovice 
+25088 Vysehorovice 
+25088 celakovice 
+25089 Lazne Touseň 
+25090 Jirny 
+25091 Jenstejn 
+25091 Svemyslice 
+25091 Zelenec 
+25092 sestajovice 
+25101 Babice 
+25101 Brezi 
+25101 Dobrejovice 
+25101 Doubek 
+25101 Herink 
+25101 Modletice 
+25101 Nupaky 
+25101 Popovicky 
+25101 Svetice 
+25101 Tehov 
+25101 cestlice 
+25101 ricany 
+25162 Louňovice 
+25162 Mukarov 
+25162 Svojetice 
+25162 Tehovec 
+25163 Kunice 
+25163 Strancice 
+25163 Vsestary 
+25164 Klokocna 
+25164 Kunice 
+25164 Mnichovice 
+25164 Strancice 
+25164 Struharov 
+25164 Vsestary 
+25164 Zvanovice 
+25165 Kaliste 
+25165 Ondrejov 
+25165 Zvanovice 
+25166 Hrusice 
+25166 Mirosovice 
+25166 Senohraby 
+25167 Nespeky 
+25167 Pysely 
+25167 Petihosty 
+25167 rehenice 
+25168 Kamenice 
+25168 Kostelec u Krizku 
+25168 Krizkovy ujezdec 
+25168 Radejovice 
+25168 Sulice 
+25168 Tynec nad Sazavou 
+25168 rehenice 
+25169 Kunice 
+25169 Petrikov 
+25169 Velke Popovice 
+25202 Jiloviste 
+25203 Lisnice 
+25203 ritka 
+25204 cisovice 
+25205 Bratrinov 
+25205 Hvozdnice 
+25206 Bojanovice 
+25206 Bratrinov 
+25206 Davle 
+25206 Mechenice 
+25206 Petrov 
+25207 stechovice 
+25208 Bus 
+25208 Rabyne 
+25208 Slapy 
+25208 stechovice 
+25209 Hradistko 
+25210 Hvozdnice 
+25210 Klinec 
+25210 Kytin 
+25210 Lisnice 
+25210 Mnisek pod Brdy 
+25210 Trnova 
+25210 Voznice 
+25210 Zahorany 
+25210 cernolice 
+25210 cisovice 
+25216 Nucice 
+25217 Chynice 
+25217 Tachlovice 
+25218 Ptice 
+25218 uhonice 
+25219 Chrasťany 
+25219 Drahelcice 
+25219 Rudna 
+25225 Dobric 
+25225 Jinocany 
+25225 Orech 
+25225 Zbuzany 
+25226 Chotec 
+25226 Kosor 
+25226 Roblin 
+25226 Trebotov 
+25226 cernosice 
+25228 Vonoklasy 
+25228 cernosice 
+25229 Dobrichovice 
+25229 Karlik 
+25229 Lety 
+25230 Lety 
+25230 revnice 
+25231 Vsenory 
+25241 Dolni Brezany 
+25241 Liber 
+25241 Zlatniky-Hodkovice 
+25242 Jesenice 
+25243 Pruhonice 
+25244 Psary 
+25245 Brezova-Olesko 
+25245 Dolni Brezany 
+25245 Ohrobec 
+25245 Vrane nad Vltavou 
+25245 Zvole 
+25246 Dolni Brezany 
+25246 Ohrobec 
+25246 Vrane nad Vltavou 
+25250 Vestec 
+25261 Dobroviz 
+25261 Jenec 
+25262 Horomerice 
+25262 Statenice 
+25262 unetice 
+25263 Roztoky 
+25264 Lichoceves 
+25264 Okor 
+25264 Svrkyne 
+25264 Velke Prilepy 
+25264 uholicky 
+25265 Holubice 
+25265 Tursko 
+25266 Libcice nad Vltavou 
+25266 Maslovice 
+25267 Tuchomerice 
+25268 Knezeves 
+25268 Stredokluky 
+25268 cicovice 
+25281 Petrov 
+25282 Kamenny Privoz 
+25301 Chyne 
+25301 Hostivice 
+25401 Jilove u Prahy 
+25401 Okrouhlo 
+25401 Petrov 
+25401 Pohori 
+25601 Benesov 
+25601 Bystrice 
+25601 Bilkovice 
+25601 Chlistov 
+25601 Chrasťany 
+25601 Kozmice 
+25601 Neveklov 
+25601 Petroupim 
+25601 Sobehrdy 
+25601 Struharov 
+25601 Teplysovice 
+25601 Vaclavice 
+25601 cakov 
+25701 Chotysany 
+25701 Popovice 
+25701 Postupice 
+25701 Velis 
+25703 Bystrice 
+25703 Jankov 
+25703 Neustupov 
+25703 Popovice 
+25703 Ratmerice 
+25705 Zvestov 
+25706 Kamberk 
+25706 Louňovice pod Blanikem 
+25706 Ostrov 
+25706 Velis 
+25706 Zvestov 
+25708 Naceradec 
+25708 Pravonin 
+25709 Pravonin 
+25709 Vracovice 
+25721 Bukovany 
+25721 Mrac 
+25721 Porici nad Sazavou 
+25722 Lsteni 
+25722 Nespeky 
+25722 Porici nad Sazavou 
+25722 Pysely 
+25722 Prestavlky u cercan 
+25722 Vranov 
+25722 cercany 
+25722 ctyrkoly 
+25723 Prestavlky u cercan 
+25724 Chocerady 
+25724 Hvezdonice 
+25724 Ostredek 
+25724 Vodslivy 
+25724 Vranov 
+25724 cakov 
+25726 Bilkovice 
+25726 Divisov 
+25726 Drahňovice 
+25726 Libez 
+25726 Litichovice 
+25726 Ostredek 
+25726 Radosovice 
+25726 Slovenice 
+25726 Trebesice 
+25726 Vsechlapy 
+25726 cesky sternberk 
+25728 Chotysany 
+25741 Bukovany 
+25741 Chleby 
+25741 Charovice 
+25741 Kamenny Privoz 
+25741 Krhanice 
+25741 Lesany 
+25741 Tynec nad Sazavou 
+25742 Krhanice 
+25742 Tynec nad Sazavou 
+25744 Chrasťany 
+25744 Charovice 
+25744 Krňany 
+25744 Lesany 
+25744 Netvorice 
+25744 Neveklov 
+25744 Rabyne 
+25744 Vysoky ujezd 
+25751 Bystrice 
+25751 Marsovice 
+25751 Olbramovice 
+25753 Bystrice 
+25753 Marsovice 
+25753 Olbramovice 
+25753 Vojkov 
+25753 Vrchotovy Janovice 
+25755 Marsovice 
+25755 Vrchotovy Janovice 
+25756 Chrasťany 
+25756 Krecovice 
+25756 Marsovice 
+25756 Neveklov 
+25756 Stranny 
+25756 Tisem 
+25763 Chlum 
+25763 Hulice 
+25763 Javornik 
+25763 Soutice 
+25763 Tichonice 
+25763 Trhovy stepanov 
+25764 Zdislavice

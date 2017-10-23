@@ -17,10 +17,10 @@ Tokenizer::Tokenizer(const string &_fileName) {
 }
 
 void Tokenizer::getNexToken(const std::function<void(const Token &_token)> &_callback) {
-    getNexToken(_callback, this->m_separators);
+    getNexToken(this->m_separators, _callback);
 }
 
-void Tokenizer::getNexToken(const std::function<void(const Token &_token)> &_callback, const string &_separators) {
+void Tokenizer::getNexToken(const string &_separators, const std::function<void(const Token &_token)> &_callback) {
     if (!this->m_valid) {
         std::cerr << "unable to open: " << this->m_fileName << std::endl;
         return;

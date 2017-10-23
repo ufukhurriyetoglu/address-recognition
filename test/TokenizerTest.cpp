@@ -58,7 +58,7 @@ TEST_CASE("Tokenizer.empty_separators") {
         numOfTokens++;
     };
     string seps;
-    t.getNexToken(handler, seps);
+    t.getNexToken(seps, handler);
 
     REQUIRE(callbackCalled);
     REQUIRE(numOfTokens == 1);
@@ -77,7 +77,7 @@ TEST_CASE("Tokenizer.set_separators") {
 
     SECTION("separators are present in file") {
         string seps = " ";
-        t.getNexToken(handler, seps);
+        t.getNexToken(seps, handler);
 
         REQUIRE(callbackCalled);
         REQUIRE(numOfTokens == 5);
@@ -88,7 +88,7 @@ TEST_CASE("Tokenizer.set_separators") {
 
     SECTION("separators are not in file") {
         string seps = "#;(";
-        t.getNexToken(handler, seps);
+        t.getNexToken(seps, handler);
 
         REQUIRE(callbackCalled);
         REQUIRE(numOfTokens == 1);
@@ -112,28 +112,28 @@ TEST_CASE("Tokenizer.separators_mixed") {
     numOfTokens = 0;
     SECTION("empty separators") {
         string seps;
-        t.getNexToken(handler, seps);
+        t.getNexToken(seps, handler);
         REQUIRE(numOfTokens == 1);
     }
 
     numOfTokens = 0;
     SECTION("all used separators") {
         string seps("#!/");
-        t.getNexToken(handler, seps);
+        t.getNexToken(seps, handler);
         REQUIRE(numOfTokens == 4);
     }
 
     numOfTokens = 0;
     SECTION("one of the used separators") {
         string seps("#");
-        t.getNexToken(handler, seps);
+        t.getNexToken(seps, handler);
         REQUIRE(numOfTokens == 2);
     }
 
     numOfTokens = 0;
     SECTION("two of the used separators") {
         string seps("#!");
-        t.getNexToken(handler, seps);
+        t.getNexToken(seps, handler);
         REQUIRE(numOfTokens == 3);
     }
 }
@@ -147,7 +147,7 @@ TEST_CASE("Tokenizer.no_tokens_just_separators") {
         numOfTokens++;
     };
     string seps("!@#$%");
-    t.getNexToken(handler, seps);
+    t.getNexToken(seps, handler);
 
     REQUIRE(numOfTokens == 0);
 }

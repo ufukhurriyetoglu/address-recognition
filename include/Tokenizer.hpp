@@ -12,7 +12,7 @@ namespace address_recognition {
 
         void getNexToken(const std::function<void(const Token &_token)> &_callback);
 
-        void getNexToken(const std::function<void(const Token &_token)> &_callback, const string &_separators);
+        void getNexToken(const string &_separators, const std::function<void(const Token &_token)> &_callback);
 
         bool isValid() const { return this->m_valid; }
 
