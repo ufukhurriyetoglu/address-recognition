@@ -8,11 +8,7 @@ Parser::Parser(Tokenizer &_tokenizer) :
 }
 
 void Parser::run() {
-    this->m_tokenizer.getNexToken([&](const Token &_token) {
-        std::cout << "found: " << _token.getValue() << std::endl;
+    this->m_tokenizer.getNexToken([&](const string &_token) {
         this->m_tokens.push_back(_token);
-        if (_token.getTokeType() == TOKEN_TYPE::ZIP) {
-            this->m_possibleZip.push_back(_token);
-        }
     });
 }

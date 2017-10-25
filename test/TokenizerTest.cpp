@@ -100,7 +100,7 @@ TEST_CASE("Tokenizer.separators_mixed") {
     REQUIRE(t.isValid());
 
     unsigned numOfTokens = 0;
-    auto handler = [&](const Token &_token) {
+    auto handler = [&](const string &_token) {
         numOfTokens++;
     };
 
@@ -143,7 +143,7 @@ TEST_CASE("Tokenizer.no_tokens_just_separators") {
     REQUIRE(t.isValid());
 
     unsigned numOfTokens = 0;
-    auto handler = [&](const Token &_token) {
+    auto handler = [&](const string &_token) {
         numOfTokens++;
     };
     string seps("!@#$%");

@@ -11,6 +11,7 @@
 #include <boost/iostreams/device/mapped_file.hpp>
 #include <boost/iostreams/stream.hpp>
 #include <boost/tokenizer.hpp>
+#include <boost/chrono.hpp>
 
 using std::string;
 using std::vector;

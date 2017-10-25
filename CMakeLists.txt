@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS "-o3")
 set(BOOST_ROOT "D:/skola/boost_1_64_0")
 
-find_package(Boost REQUIRED iostreams)
+find_package(Boost REQUIRED iostreams system chrono)
 
 include_directories("include")
 

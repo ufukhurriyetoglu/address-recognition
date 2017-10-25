@@ -14,11 +14,11 @@ namespace address_recognition {
 
         void run();
 
-        const vector<Token> &getTokens() const { return this->m_tokens; }
+        const vector<string> &getTokens() const { return this->m_tokens; }
 
     private:
         Tokenizer &m_tokenizer;
-        vector<Token> m_possibleZip;
-        vector<Token> m_tokens;
+        vector<string> m_possibleZip;
+        vector<string> m_tokens;
     };
 }

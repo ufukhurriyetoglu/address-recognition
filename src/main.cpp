@@ -1,13 +1,14 @@
-#include <iostream>
-#include <string>
-#include <unistd.h>
-
 #include "Tokenizer.hpp"
+#include <TrieManager.hpp>
 #include "Parser.hpp"
+
+#include "reference.hpp"
+#include <unistd.h>
 
 using std::string;
 using address_recognition::Tokenizer;
 using address_recognition::Parser;
+using address_recognition::TrieManager;
 
 int main(int _argc, char **_argv) {
     int opt;
@@ -40,14 +41,16 @@ int main(int _argc, char **_argv) {
         }
     }
 
-    if (!load) {
-        std::cout << "Running with -g -> generating trie from: " << triePath << std::endl;
-        return 0;
-    }
+//    if (!load) {
+//        std::cout << "Running with -g -> generating trie from: " << triePath << std::endl;
+//        return 0;
+//    }
 
-    Tokenizer t(inFilePath);
-    Parser p(t);
-    p.run();
+//    Tokenizer t(inFilePath);
+//    Parser p(t);
+//    p.run();
+
+    TrieManager::createDefaultTries();
 
     return 0;
 }

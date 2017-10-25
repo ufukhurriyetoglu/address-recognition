@@ -51,8 +51,6 @@ TEST_CASE("TrieTest.basic", "[Trie][generate][basic]") {
     std::for_each(data.begin(), data.end(), [&t](const string &_input) {
         REQUIRE(t.contains(_input));
     });
-
-    t.print();
 }
 
 TEST_CASE("TrieTest.uppCase_with_numeric", "[Trie][generate][up_num]") {
@@ -138,7 +136,6 @@ TEST_CASE("TrieTest.dummy-trie-save", "[Trie][save][CZ][zip]") {
 
     tok.getNexToken(" #\n", addString);
     REQUIRE(callbackCalled);
-    t.print();
     t.save("../../output/dummyTestOut.txt");
 }
 
@@ -213,9 +210,9 @@ TEST_CASE("TrieTest.dummy-trie-save-and-load", "[Trie][save][CZ][zip]") {
     Trie t;
     vector<string> content;
 
-    auto addString = [&](const Token &_token) {
-        t.addString(_token.getValue());
-        content.push_back(_token.getValue());
+    auto addString = [&](const string &_token) {
+        t.addString(_token);
+        content.push_back(_token);
     };
 
     SECTION("Create and Save trie") {
