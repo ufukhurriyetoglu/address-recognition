@@ -10,7 +10,7 @@ namespace address_recognition {
 
         void print();
 
-        void save(const string &_filePath);
+        int save(const string &_filePath);
 
         int load(const string &_filePath);
 
@@ -19,14 +19,7 @@ namespace address_recognition {
         void addString(const string &_newString);
 
     private:
-//        static const int UPPR_C_SIZE = 26;
-//        static const int LWR_C_SIZE = 26;
-//        static const int CPHR_SIZE = 10;
-//        static const int ALPHBT_SIZE = (UPPR_C_SIZE + LWR_C_SIZE + CPHR_SIZE);
-
         class TrieNode;
-
-        void recursionStep(TrieNode *_root, const char *_data, int _idx, size_t _size);
 
         void iterativeStep(const char *_data, size_t _size);
 

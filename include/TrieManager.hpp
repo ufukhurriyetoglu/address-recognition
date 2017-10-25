@@ -1,21 +1,31 @@
 #pragma once
 
+#include "Trie.hpp"
 #include "reference.hpp"
 
 namespace address_recognition {
     class TrieManager {
+        typedef address_recognition::Trie Trie;
+
     public:
-        static void createDefaultTries();
+        static void createTries(
+                const std::map<string, string> &_paths,
+                const std::function<void(int _errNo)> &_callbackError);
 
-        static void createCustomTries(const std::map<string, string> &_paths);
-
-        int loadTriesFromFiles(const vector<string> &_files);
+        int loadTriesFromFiles(const vector<string> &_files,
+                               const std::function<void()> &_callbackError);
 
         bool isTokenIn(const string &_query);
 
-    private:
-        static void createTrie(const string &_inPath, const string &_outPath);
+        const string &getLastError() const { return m_lastError; }
 
-        static void createTries(const std::map<string, string> &_paths);
+        const vector<unique_ptr<Trie>> &getTries() const { return this->m_tries; }
+
+    private:
+        static int createTrie(const string &_inPath, const string &_outPath);
+
+        vector<unique_ptr<Trie>> m_tries;
+
+        string m_lastError;
     };
 }

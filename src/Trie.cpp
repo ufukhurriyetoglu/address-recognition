@@ -54,32 +54,6 @@ void Trie::TrieNode::save(ofstream &_fileOut) {
         lineLen++;
     }
 }
-//
-//long Trie::handleIndex(long _in, bool _normalize) {
-//    if (_normalize) {
-//        if (_in >= '0' && _in <= '9') {
-//            return _in - '0';
-//        } else if (_in >= 'a' && _in <= 'z') {
-//            return _in - 'a' + CPHR_SIZE;
-//        } else if (_in >= 'A' && _in <= 'Z') {
-//            return _in - 'A' + CPHR_SIZE + LWR_C_SIZE;
-//        } else {
-//            std::cout << "ex: " << _in << std::endl;
-//            throw string("Character: " + std::to_string(_in) + " is not supported!");
-//        }
-//    } else {
-//        if (_in >= 0 && _in < CPHR_SIZE) {
-//            return _in + '0';
-//        } else if (_in >= CPHR_SIZE && _in < LWR_C_SIZE + CPHR_SIZE) {
-//            return _in + 'a' - CPHR_SIZE;
-//        } else if (_in >= LWR_C_SIZE && _in < UPPR_C_SIZE + LWR_C_SIZE + CPHR_SIZE) {
-//            return _in + 'A' - CPHR_SIZE - LWR_C_SIZE;
-//        } else {
-//            std::cout << "ex: " << _in << std::endl;
-//            throw string("Character: " + std::to_string(_in) + " is not supported!");
-//        }
-//    }
-//}
 
 void Trie::print() {
     this->m_head->print();
@@ -117,8 +91,12 @@ Trie::Trie() {
     this->m_head = std::make_unique<TrieNode>();
 }
 
-void Trie::save(const string &_filePath) {
+int Trie::save(const string &_filePath) {
     ofstream fileOut(_filePath);
+    if (!fileOut.is_open()) {
+        std::cerr << "Unable to open: '" << _filePath << "' to save trie" << std::endl;
+        return 1;
+    }
     this->m_head->save(fileOut);
 }
 
@@ -135,19 +113,6 @@ int Trie::load(const string &_filePath) {
     auto size = inputFile.size();
     iterativeStep(data, size);
     return 0;
-}
-
-void Trie::recursionStep(Trie::TrieNode *_root, const char *_data, int _idx, size_t _size) {
-    if (_root == nullptr || _idx == _size) {
-        return;
-    }
-    char data = _data[_idx];
-    if (data == '#') {
-        recursionStep(_root, _data, ++_idx, _size);
-    } else {
-        _root->addSon(data);
-        recursionStep(_root->getSon(data), _data, ++_idx, _size);
-    }
 }
 
 void Trie::iterativeStep(const char *_data, size_t _size) {

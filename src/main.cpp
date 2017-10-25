@@ -50,7 +50,5 @@ int main(int _argc, char **_argv) {
 //    Parser p(t);
 //    p.run();
 
-    TrieManager::createDefaultTries();
-
     return 0;
 }

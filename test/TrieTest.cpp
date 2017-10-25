@@ -139,6 +139,25 @@ TEST_CASE("TrieTest.dummy-trie-save", "[Trie][save][CZ][zip]") {
     t.save("../../output/dummyTestOut.txt");
 }
 
+TEST_CASE("TrieTest.trie-save-no-output", "[Trie][save][zip]") {
+    Trie t;
+    bool callbackCalled = false;
+
+    auto addString = [&](const Token &_token) {
+        callbackCalled = true;
+        t.addString(_token.getValue());
+    };
+
+    Tokenizer tok("../../test/data/dummyTestInput.txt");
+    REQUIRE(tok.isValid());
+
+    tok.getNexToken(" #\n", addString);
+    REQUIRE(callbackCalled);
+
+    auto res = t.save("");
+    REQUIRE(res == 1);
+}
+
 TEST_CASE("TrieTest.random-trie-save-load", "[Trie][save][load][CZ][zip]") {
     Trie trie;
     vector<string> data = {};
