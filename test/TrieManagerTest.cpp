@@ -60,28 +60,44 @@ TEST_CASE("TrieManagerTest.AlreadyExisting", "[TrieManager]") {
 }
 
 TEST_CASE("TrieManagerTest.LoadTriesFromFile", "[TrieManager]") {
-    std::map<string, string> paths = {
-            {"../../test/data/sampleTestInput.txt", "../../output/test/tries/sampleTrie"}
-    };
+    SECTION("Load one trie") {
+        std::map<string, string> paths = {
+                {"../../test/data/sampleTestInput.txt", "../../output/test/tries/sampleTrie"}
+        };
 
-    bool error = false;
-    auto errHandler = [&error](int _errNo) {
-        error = true;
-    };
+        bool error = false;
+        auto errHandler = [&error](int _errNo) {
+            error = true;
+        };
 
-    TrieManager::createTries(paths, errHandler);
-    REQUIRE(!error);
+        TrieManager::createTries(paths, errHandler);
+        REQUIRE(!error);
 
-    error = false;
-    auto errHandler2 = [&error]() {
-        error = true;
-    };
-    TrieManager mgr;
-    mgr.loadTriesFromFiles({paths.begin()->second}, errHandler2);
-    REQUIRE(!error);
-    REQUIRE(mgr.getTries().size() == 1);
-    REQUIRE(mgr.isTokenIn("Krhanice"));
-    REQUIRE(mgr.getLastError().empty());
+        error = false;
+        auto errHandler2 = [&error]() {
+            error = true;
+        };
 
-    remove(paths.begin()->second);
+        TrieManager mgr;
+        mgr.loadTriesFromFiles({paths.begin()->second}, errHandler2);
+
+        REQUIRE(!error);
+        REQUIRE(mgr.getTries().size() == 1);
+        REQUIRE(mgr.isTokenIn("Krhanice"));
+        REQUIRE(mgr.getLastError().empty());
+
+        remove(paths.begin()->second);
+    }
+
+    SECTION("Load one invalid trie") {
+
+    }
+
+    SECTION("Load more tries") {
+
+    }
+
+    SECTION("Load more invalid tries") {
+
+    }
 }
