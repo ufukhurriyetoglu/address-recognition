@@ -234,6 +234,32 @@ TEST_CASE("TrieTest.dummy-trie-save-and-load", "[Trie][save][CZ][zip]") {
         content.push_back(_token);
     };
 
+    Tokenizer tok("../../test/data/sampleTestInput.txt");
+    REQUIRE(tok.isValid());
+
+    tok.getNexToken(" \n", addString);
+    t.save("../../output/sampleTestOut.txt");
+
+    Trie t2;
+    auto res = t2.load("../../output/sampleTestOut.txt");
+    t2.print();
+    REQUIRE(res == 0);
+
+    std::for_each(content.begin(), content.end(), [&t2](const string &_input) {
+        std::cout << "check : " << _input << std::endl;
+        REQUIRE(t2.contains(_input));
+    });
+}
+
+TEST_CASE("TrieTest.sample-trie-save-and-load", "[Trie]") {
+    Trie t;
+    vector<string> content;
+
+    auto addString = [&](const string &_token) {
+        t.addString(_token);
+        content.push_back(_token);
+    };
+
     SECTION("Create and Save trie") {
         Tokenizer tok("../../test/data/sampleTestInput.txt");
         REQUIRE(tok.isValid());
@@ -252,3 +278,4 @@ TEST_CASE("TrieTest.dummy-trie-save-and-load", "[Trie][save][CZ][zip]") {
         });
     }
 }
+

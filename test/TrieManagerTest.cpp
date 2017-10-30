@@ -59,45 +59,138 @@ TEST_CASE("TrieManagerTest.AlreadyExisting", "[TrieManager]") {
     remove(paths.begin()->second);
 }
 
-TEST_CASE("TrieManagerTest.LoadTriesFromFile", "[TrieManager]") {
-    SECTION("Load one trie") {
-        std::map<string, string> paths = {
-                {"../../test/data/sampleTestInput.txt", "../../output/test/tries/sampleTrie"}
-        };
+TEST_CASE("Create and Load one trie", "[TrieManager]") {
+    std::map<string, string> paths = {
+            {"../../test/data/sampleTestInput.txt", "../../output/test/tries/sampleTrie"}
+    };
 
-        bool error = false;
-        auto errHandler = [&error](int _errNo) {
-            error = true;
-        };
+    bool error = false;
+    auto errHandler = [&error](int _errNo) {
+        error = true;
+    };
 
-        TrieManager::createTries(paths, errHandler);
-        REQUIRE(!error);
+    TrieManager::createTries(paths, errHandler);
+    REQUIRE(!error);
 
-        error = false;
-        auto errHandler2 = [&error]() {
-            error = true;
-        };
+    error = false;
+    auto errHandler2 = [&error]() {
+        error = true;
+    };
 
-        TrieManager mgr;
-        mgr.loadTriesFromFiles({paths.begin()->second}, errHandler2);
+    TrieManager mgr;
+    mgr.loadTriesFromFiles({paths.begin()->second}, errHandler2);
 
-        REQUIRE(!error);
-        REQUIRE(mgr.getTries().size() == 1);
-        REQUIRE(mgr.isTokenIn("Krhanice"));
-        REQUIRE(mgr.getLastError().empty());
+    REQUIRE(!error);
+    REQUIRE(mgr.getTries().size() == 1);
+    REQUIRE(mgr.isTokenIn("Krhanice"));
+    REQUIRE(mgr.getLastError().empty());
 
-        remove(paths.begin()->second);
+    remove(paths.begin()->second);
+}
+
+TEST_CASE("Load one invalid trie", "[TrieManager]") {
+    std::map<string, string> paths = {
+            {"../../test/data/nonExistingFile.txt", "../../output/test/tries/nonExistingFile"}
+    };
+
+    bool error = false;
+    auto errHandler = [&error]() {
+        error = true;
+    };
+
+    TrieManager mgr;
+    mgr.loadTriesFromFiles({paths.begin()->second}, errHandler);
+    REQUIRE(error);
+    REQUIRE(mgr.getTries().size() == 0);
+    REQUIRE(!mgr.isTokenIn("Krhanice"));
+    REQUIRE(!mgr.getLastError().empty());
+}
+
+TEST_CASE("Create and Load more tries", "[TrieManager]") {
+    std::map<string, string> paths = {
+            {"../../test/data/dummyTestInput.txt",  "../../output/test/tries/dummyTestTrie"},
+            {"../../test/data/sampleTestInput.txt", "../../output/test/tries/sampleTestTrie"},
+            {"../../test/data/mtpleTestInput.txt",  "../../output/test/tries/mtpleTestTrie"}
+    };
+
+    bool error = false;
+    auto errHandler = [&error](int _errNo) {
+        error = true;
+    };
+
+    TrieManager::createTries(paths, errHandler);
+    REQUIRE(!error);
+
+    int numErrors = 0;
+    auto errHandler2 = [&error, &numErrors]() {
+        error = true;
+        numErrors++;
+    };
+
+    error = false;
+    TrieManager mgr;
+
+    vector<string> triePaths;
+    for (auto it = paths.begin(); it != paths.end(); it++) {
+        triePaths.push_back(it->second);
     }
+    mgr.loadTriesFromFiles(triePaths, errHandler2);
 
-    SECTION("Load one invalid trie") {
+    REQUIRE(!error);
+    REQUIRE(numErrors == 0);
+    REQUIRE(mgr.getTries().size() == 3);
+    REQUIRE(mgr.isTokenIn("Krhanice"));
+    REQUIRE(mgr.isTokenIn("bar"));
+    REQUIRE(mgr.isTokenIn("mtple"));
+    REQUIRE(mgr.getLastError().empty());
 
-    }
-
-    SECTION("Load more tries") {
-
-    }
-
-    SECTION("Load more invalid tries") {
-
+    for (const auto &path:triePaths) {
+        remove(path);
     }
 }
+
+TEST_CASE("Load more invalid tries", "[TrieManager]") {
+    std::map<string, string> paths = {
+            {"../../test/data/dummyTestInput.txt", "../../output/test/tries/dummyTestTrie"},
+            {"../../test/data/nonsense.txt",       "../../output/test/tries/sampleTestTrie"},
+            {"../../test/data/nonsense2.txt",      "../../output/test/tries/mtpleTestTrie"}
+    };
+
+    int numErrors = 0;
+    bool error = false;
+
+    auto errHandler = [&error, &numErrors](int _errNo) {
+        error = true;
+        numErrors++;
+    };
+
+    TrieManager::createTries(paths, errHandler);
+    REQUIRE(error);
+    REQUIRE(numErrors == 2);
+
+    numErrors = 0;
+    auto errHandler2 = [&error, &numErrors]() {
+        error = true;
+        numErrors++;
+    };
+
+    error = false;
+    TrieManager mgr;
+
+    vector<string> triePaths;
+    for (auto it = paths.begin(); it != paths.end(); it++) {
+        triePaths.push_back(it->second);
+    }
+    mgr.loadTriesFromFiles(triePaths, errHandler2);
+
+    REQUIRE(error);
+    REQUIRE(numErrors == 2);
+    REQUIRE(mgr.getTries().size() == 1);
+    REQUIRE(!mgr.getLastError().empty());
+
+    for (const auto &path:triePaths) {
+        remove(path);
+    }
+}
+
+

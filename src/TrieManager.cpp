@@ -57,19 +57,24 @@ void TrieManager::createTries(const std::map<string, string> &_paths,
 int TrieManager::loadTriesFromFiles(const vector<string> &_files,
                                     const std::function<void()> &_callbackError) {
     std::for_each(_files.begin(), _files.end(), [&](const string &_path) {
-        std::cout << "loading trie: " << _path << std::endl;
         auto trie = std::make_unique<Trie>();
         auto res = trie->load(_path);
         if (res == 0) {
             this->m_tries.push_back(std::move(trie));
         } else {
             _callbackError();
-            std::cerr << "unable to load: " << _path << std::endl;
+            this->m_lastError = "unable to load: " + _path;
+            std::cout << this->m_lastError << std::endl;
         }
     });
     return 0;
 }
 
 bool TrieManager::isTokenIn(const string &_query) {
-    return true;
+    for (const auto &elem:this->m_tries) {
+        if (elem->contains(_query)) {
+            return true;
+        }
+    }
+    return false;
 }

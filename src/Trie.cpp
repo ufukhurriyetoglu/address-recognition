@@ -122,7 +122,7 @@ void Trie::iterativeStep(const char *_data, size_t _size) {
     size_t ctr = 0;
     while (ctr < _size) {
         char data = _data[ctr];
-        if (data != '#') {
+        if (data != '#' && data != '\n') {  // TODO use isspace?
             queue.back()->addSon(data);
             queue.push_back(queue.back()->getSon(data));
         } else {
