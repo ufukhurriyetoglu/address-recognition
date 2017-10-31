@@ -23,7 +23,7 @@ void Trie::TrieNode::print() {
 }
 
 Trie::TrieNode::TrieNode() {
-    this->m_isEndOfStr = false;
+//    this->m_isEndOfStr = false;
 }
 
 Trie::TrieNode *Trie::TrieNode::getSon(int _keyValue) const {
@@ -84,7 +84,7 @@ void Trie::addString(const string &_newString) {
         }
         curr = curr->getSon(_newString[i]);
     }
-    curr->isEndOfStr() = true;
+//    curr->isEndOfStr() = true;
 }
 
 Trie::Trie() {
@@ -94,7 +94,7 @@ Trie::Trie() {
 int Trie::save(const string &_filePath) {
     ofstream fileOut(_filePath);
     if (!fileOut.is_open()) {
-        std::cerr << "Unable to open: '" << _filePath << "' to save trie" << std::endl;
+        logError(__FILE__, __LINE__, "Unable to open: '" + _filePath + "' to save trie");
         return 1;
     }
     this->m_head->save(fileOut);
@@ -126,7 +126,6 @@ void Trie::iterativeStep(const char *_data, size_t _size) {
             queue.back()->addSon(data);
             queue.push_back(queue.back()->getSon(data));
         } else {
-            queue.back()->isEndOfStr() = true;
             queue.pop_back();
         }
         ctr++;

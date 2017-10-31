@@ -12,7 +12,9 @@ Tokenizer::Tokenizer(const string &_fileName) {
     try {
         this->m_inputFile.open(this->m_fileName);
         this->m_is.open(this->m_inputFile, std::ios::in);
-    } catch (std::exception &ex) {}
+    } catch (std::exception &ex) {
+        logError(__FILE__, __LINE__, "Tokenizer failed to load: " + _fileName);
+    }
 
     this->m_valid = this->m_is.is_open();
 }
@@ -23,7 +25,7 @@ void Tokenizer::getNexToken(const std::function<void(const string &_token)> &_ca
 
 void Tokenizer::getNexToken(const string &_separators, const std::function<void(const string &_token)> &_callback) {
     if (!this->m_valid) {
-        std::cerr << "unable to open: " << this->m_fileName << std::endl;
+        logError(__FILE__, __LINE__, "unable to open: " + this->m_fileName);
         return;
     }
 
@@ -41,4 +43,9 @@ void Tokenizer::getNexToken(const string &_separators, const std::function<void(
 
     this->m_is.clear();
     this->m_is.seekg(0, std::ios::beg);
+}
+
+Tokenizer::~Tokenizer() {
+//    this->m_is.close();
+//    this->m_inputFile.close();
 }

@@ -21,6 +21,8 @@ namespace address_recognition {
 
         const vector<unique_ptr<Trie>> &getTries() const { return this->m_tries; }
 
+        bool empty() const { return this->m_tries.empty(); }
+
     private:
         static int createTrie(const string &_inPath, const string &_outPath);
 

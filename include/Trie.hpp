@@ -35,11 +35,10 @@ namespace address_recognition {
 
             void addSon(int _charVal);
 
-            bool &isEndOfStr() { return this->m_isEndOfStr; }
+            bool isEndOfStr() const { return this->m_sons.empty(); }
 
         private:
             std::map<int, unique_ptr<TrieNode >> m_sons;
-            bool m_isEndOfStr;
         };
 
         std::unique_ptr<TrieNode> m_head;

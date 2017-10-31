@@ -28,7 +28,7 @@ int main(int _argc, char **_argv) {
                 triePath = string(optarg);
                 break;
             case '?':
-                std::cerr << "Unknown option: '" << char(optopt) << "'!" << std::endl;
+                logError(__FILE__, __LINE__, string(":Unknown option: '") + char(optopt) + string("'!"));
                 break;
             case 'h':
                 std::cout << "-f for input file to parse\n" \

@@ -15,12 +15,12 @@ int TrieManager::createTrie(const string &_inPath, const string &_outPath) {
 
     Tokenizer tok(_inPath);
     if (!tok.isValid()) {
-        std::cerr << "unable to load file: " + _inPath << std::endl;
+        logError(__FILE__, __LINE__, "Unable to load file: " + _inPath);
         return 1;
     }
 
     if (ifstream(_outPath).good()) {
-        std::cerr << "already exists: " + _outPath << std::endl;
+        logError(__FILE__, __LINE__, "Already exists: " + _outPath);
         return 2;
     }
 
@@ -36,7 +36,7 @@ int TrieManager::createTrie(const string &_inPath, const string &_outPath) {
 
     int res = t.save(_outPath);
     if (res != 0) {
-        std::cerr << "failed saving '" + _outPath + "'" << std::endl;
+        logError(__FILE__, __LINE__, "failed saving '" + _outPath + "'");
         return 3;
     }
     return 0;
@@ -64,7 +64,7 @@ int TrieManager::loadTriesFromFiles(const vector<string> &_files,
         } else {
             _callbackError();
             this->m_lastError = "unable to load: " + _path;
-            std::cout << this->m_lastError << std::endl;
+            logError(__FILE__, __LINE__, this->getLastError());
         }
     });
     return 0;

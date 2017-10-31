@@ -242,11 +242,9 @@ TEST_CASE("TrieTest.dummy-trie-save-and-load", "[Trie][save][CZ][zip]") {
 
     Trie t2;
     auto res = t2.load("../../output/sampleTestOut.txt");
-    t2.print();
     REQUIRE(res == 0);
 
     std::for_each(content.begin(), content.end(), [&t2](const string &_input) {
-        std::cout << "check : " << _input << std::endl;
         REQUIRE(t2.contains(_input));
     });
 }
@@ -260,22 +258,54 @@ TEST_CASE("TrieTest.sample-trie-save-and-load", "[Trie]") {
         content.push_back(_token);
     };
 
-    SECTION("Create and Save trie") {
-        Tokenizer tok("../../test/data/sampleTestInput.txt");
-        REQUIRE(tok.isValid());
+    Tokenizer tok("../../test/data/sampleTestInput.txt");
+    REQUIRE(tok.isValid());
 
-        tok.getNexToken(" \n", addString);
-        t.save("../../output/sampleTestOut.txt");
-    }
+    tok.getNexToken(" \n", addString);
+    t.save("../../output/sampleTestOut.txt");
 
-    SECTION("Load trie") {
-        Trie t2;
-        auto res = t2.load("../../output/sampleTestOut.txt");
-        REQUIRE(res == 0);
+    Trie t2;
+    auto res = t2.load("../../output/sampleTestOut.txt");
+    REQUIRE(res == 0);
 
-        std::for_each(content.begin(), content.end(), [&t2](const string &_input) {
-            REQUIRE(t2.contains(_input));
-        });
-    }
+    std::for_each(content.begin(), content.end(), [&t2](const string &_input) {
+        REQUIRE(t2.contains(_input));
+    });
 }
 
+TEST_CASE("TrieTest.PartialMatch") {
+    Trie t;
+
+    auto addString = [&](const string &_token) {
+        t.addString(_token);
+    };
+
+    Tokenizer tok("../../test/data/sampleTestInput.txt");
+    REQUIRE(tok.isValid());
+
+    tok.getNexToken(" \n", addString);
+
+    REQUIRE(!t.contains("Pra"));
+}
+
+TEST_CASE("TrieTest.PartialMatchLoad") {
+    Trie t;
+
+    auto addString = [&](const string &_token) {
+        t.addString(_token);
+    };
+
+    Tokenizer tok("../../test/data/sampleTestInput.txt");
+    REQUIRE(tok.isValid());
+
+    tok.getNexToken(" \n", addString);
+    t.save("../../output/sampleTestOut.txt");
+
+    Trie t2;
+    auto res = t2.load("../../output/sampleTestOut.txt");
+    REQUIRE(res == 0);
+
+    REQUIRE(!t2.contains("Pra"));
+}
+
+// TODO make trie contains case insensitive
