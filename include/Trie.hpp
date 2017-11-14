@@ -8,37 +8,40 @@ namespace address_recognition {
     public:
         explicit Trie();
 
-        void print();
+        void print(bool _formatted = false);
 
         int save(const string &_filePath);
 
         int load(const string &_filePath);
 
-        bool contains(const string &_query);
+        bool contains(const wstring &_query);
 
-        void addString(const string &_newString);
+        void addString(const wstring &_newString);
 
     private:
         class TrieNode;
 
-        void iterativeStep(const char *_data, size_t _size);
+        void iterativeStep(const wchar_t *_data, size_t _size);
 
         class TrieNode {
         public:
-            explicit TrieNode();
 
-            void print();
+            void print(bool _formatted = false);
 
-            void save(ofstream &_fileOut);
+            void save(wofstream &_fileOut);
 
-            TrieNode *getSon(int _keyValue) const;
+            TrieNode *getSon(wchar_t _keyValue) const;
 
-            void addSon(int _charVal);
+            void addSon(wchar_t _charVal);
 
-            bool isEndOfStr() const { return this->m_sons.empty(); }
+            bool isLast() const { return this->m_isLast; }
+
+            void setIsLast(bool _last) { this->m_isLast = _last; }
 
         private:
-            std::map<int, unique_ptr<TrieNode >> m_sons;
+            std::map<wchar_t, unique_ptr<TrieNode >> m_sons;
+
+            bool m_isLast = false;
         };
 
         std::unique_ptr<TrieNode> m_head;

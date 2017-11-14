@@ -10,19 +10,18 @@ namespace address_recognition {
     public:
         explicit Tokenizer(const string &_fileName);
 
-        ~Tokenizer();
+        void getNexToken(const std::function<void(const wstring &_token)> &_callback);
 
-        void getNexToken(const std::function<void(const string &_token)> &_callback);
-
-        void getNexToken(const string &_separators, const std::function<void(const string &_token)> &_callback);
+        void getNexToken(const wstring &_separators, const std::function<void(const wstring &_token)> &_callback);
 
         bool isValid() const { return this->m_valid; }
 
     private:
         string m_fileName;
-        mapped_file_source m_inputFile;
-        boost::iostreams::stream<mapped_file_source> m_is;
-        string m_separators = " ;\n\r";
+        wifstream m_inputFile;
+//        mapped_file_source m_inputFile;
+//        boost::iostreams::stream<mapped_file_source> m_is;
+        wstring m_separators = L" ;\n\r";
         bool m_valid = false;
     };
 }

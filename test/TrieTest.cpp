@@ -1,30 +1,35 @@
 #include "catch.hpp"
 #include "Trie.hpp"
 #include "Tokenizer.hpp"
+#include <random>
 
 using address_recognition::Trie;
 using address_recognition::Token;
 using address_recognition::Tokenizer;
 
-std::string random_string(size_t length) {
-    auto randchar = []() -> char {
-        const char charset[] =
-                "0123456789"
-                        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                        "abcdefghijklmnopqrstuvwxyz";
-        const size_t max_index = (sizeof(charset) - 1);
-        return charset[rand() % max_index];
+std::wstring random_string(size_t _length) {
+    auto randchar = []() -> wchar_t {
+        static std::random_device rd;
+        static std::mt19937 gen(rd());
+        const wchar_t charset[] =
+                L"0123456789"
+                        L"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                        L"abcdefghijklmnopqrstuvwxyz";
+        auto charsetSize = wcslen(charset);
+        static std::uniform_int_distribution<> dis(0, charsetSize - 1);
+        return charset[dis(gen)];
     };
-    std::string str(length, 0);
-    std::generate_n(str.begin(), length, randchar);
+
+    std::wstring str(_length, L'\0');
+    std::generate_n(str.begin(), _length, randchar);
     return str;
 }
 
 TEST_CASE("TrieTest.empty", "[Trie][generate][empty]") {
     Trie t;
-    vector<string> data = {};
+    vector<wstring> data = {};
 
-    std::for_each(data.begin(), data.end(), [&t](const string &_input) {
+    std::for_each(data.begin(), data.end(), [&t](const wstring &_input) {
         t.addString(_input);
     });
     REQUIRE(true);
@@ -32,53 +37,53 @@ TEST_CASE("TrieTest.empty", "[Trie][generate][empty]") {
 
 TEST_CASE("TrieTest.basic", "[Trie][generate][basic]") {
     Trie t;
-    vector<string> data = {"foo",
-                           "fooz",
-                           "foob",
-                           "foobar",
-                           "foobaz",
-                           "bar",
-                           "baz",
-                           "baa",
-                           "bab",
-                           "ba1",
-                           "baA"};
+    const vector<wstring> data = {L"foo",
+                                  L"fooz",
+                                  L"foob",
+                                  L"foobar",
+                                  L"foobaz",
+                                  L"bar",
+                                  L"baz",
+                                  L"baa",
+                                  L"bab",
+                                  L"ba1",
+                                  L"baA"};
 
-    std::for_each(data.begin(), data.end(), [&t](const string &_input) {
+    std::for_each(data.begin(), data.end(), [&t](const wstring &_input) {
         t.addString(_input);
     });
 
-    std::for_each(data.begin(), data.end(), [&t](const string &_input) {
+    std::for_each(data.begin(), data.end(), [&t](const wstring &_input) {
         REQUIRE(t.contains(_input));
     });
 }
 
 TEST_CASE("TrieTest.uppCase_with_numeric", "[Trie][generate][up_num]") {
     Trie t;
-    vector<string> data = {"FoO",
-                           "fOo3",
-                           "1oo2",
-                           "foobar",
-                           "foobaz",
-                           "b4r",
-                           "BAZaz",
-                           "BAA",
-                           "baB",
-                           "bA111",
-                           "3aA"};
+    const vector<wstring> data = {L"FoO",
+                                  L"fOo3",
+                                  L"1oo2",
+                                  L"foobar",
+                                  L"foobaz",
+                                  L"b4r",
+                                  L"BAZaz",
+                                  L"BAA",
+                                  L"baB",
+                                  L"bA111",
+                                  L"3aA"};
 
-    std::for_each(data.begin(), data.end(), [&t](const string &_input) {
+    std::for_each(data.begin(), data.end(), [&t](const wstring &_input) {
         t.addString(_input);
     });
 
-    std::for_each(data.begin(), data.end(), [&t](const string &_input) {
+    std::for_each(data.begin(), data.end(), [&t](const wstring &_input) {
         REQUIRE(t.contains(_input));
     });
 }
 
 TEST_CASE("TrieTest.random_gen", "[Trie][generate][random]") {
     Trie t;
-    vector<string> data = {};
+    vector<wstring> data = {};
 
     size_t val = 0;
     const int max_iter = 255;
@@ -97,11 +102,11 @@ TEST_CASE("TrieTest.random_gen", "[Trie][generate][random]") {
         }
     }
 
-    std::for_each(data.begin(), data.end(), [&t](const string &_input) {
+    std::for_each(data.begin(), data.end(), [&t](const wstring &_input) {
         t.addString(_input);
     });
 
-    std::for_each(data.begin(), data.end(), [&t](const string &_input) {
+    std::for_each(data.begin(), data.end(), [&t](const wstring &_input) {
         REQUIRE(t.contains(_input));
     });
 }
@@ -134,7 +139,7 @@ TEST_CASE("TrieTest.dummy-trie-save", "[Trie][save][CZ][zip]") {
     Tokenizer tok("../../test/data/dummyTestInput.txt");
     REQUIRE(tok.isValid());
 
-    tok.getNexToken(" #\n", addString);
+    tok.getNexToken(L" #\n", addString);
     REQUIRE(callbackCalled);
     t.save("../../output/dummyTestOut.txt");
 }
@@ -151,7 +156,7 @@ TEST_CASE("TrieTest.trie-save-no-output", "[Trie][save][zip]") {
     Tokenizer tok("../../test/data/dummyTestInput.txt");
     REQUIRE(tok.isValid());
 
-    tok.getNexToken(" #\n", addString);
+    tok.getNexToken(L" #\n", addString);
     REQUIRE(callbackCalled);
 
     auto res = t.save("");
@@ -160,13 +165,13 @@ TEST_CASE("TrieTest.trie-save-no-output", "[Trie][save][zip]") {
 
 TEST_CASE("TrieTest.random-trie-save-load", "[Trie][save][load][CZ][zip]") {
     Trie trie;
-    vector<string> data = {};
+    vector<wstring> data = {};
 
-    auto addStringToTrie = [&trie](const string &_value) {
+    auto addStringToTrie = [&trie](const wstring &_value) {
         trie.addString(_value);
     };
 
-    auto checkIfStringInTrie = [&trie](const string &_value) {
+    auto checkIfStringInTrie = [&trie](const wstring &_value) {
         REQUIRE(trie.contains(_value));
     };
 
@@ -186,30 +191,30 @@ TEST_CASE("TrieTest.random-trie-save-load", "[Trie][save][load][CZ][zip]") {
     auto res = t2.load(path);
     REQUIRE(res == 0);
 
-    std::for_each(data.begin(), data.end(), [&t2](const string &_value) {
+    std::for_each(data.begin(), data.end(), [&t2](const wstring &_value) {
         REQUIRE(t2.contains(_value));
     });
 }
 
 TEST_CASE("TrieTest.simple-trie-save-and-load", "[Trie][save]") {
     Trie t;
-    vector<string> data = {"FoO",
-                           "fOo3",
-                           "1oo2",
-                           "foobar",
-                           "foobaz",
-                           "b4r",
-                           "BAZaz",
-                           "BAA",
-                           "baB",
-                           "bA111",
-                           "3aA"};
+    vector<wstring> data = {L"FoO",
+                            L"fOo3",
+                            L"1oo2",
+                            L"foobar",
+                            L"foobaz",
+                            L"b4r",
+                            L"BAZaz",
+                            L"BAA",
+                            L"baB",
+                            L"bA111",
+                            L"3aA"};
 
-    std::for_each(data.begin(), data.end(), [&t](const string &_input) {
+    std::for_each(data.begin(), data.end(), [&t](const wstring &_input) {
         t.addString(_input);
     });
 
-    std::for_each(data.begin(), data.end(), [&t](const string &_input) {
+    std::for_each(data.begin(), data.end(), [&t](const wstring &_input) {
         REQUIRE(t.contains(_input));
     });
 
@@ -220,40 +225,16 @@ TEST_CASE("TrieTest.simple-trie-save-and-load", "[Trie][save]") {
     auto res = t2.load(path);
     REQUIRE(res == 0);
 
-    std::for_each(data.begin(), data.end(), [&t2](const string &_input) {
-        REQUIRE(t2.contains(_input));
-    });
-}
-
-TEST_CASE("TrieTest.dummy-trie-save-and-load", "[Trie][save][CZ][zip]") {
-    Trie t;
-    vector<string> content;
-
-    auto addString = [&](const string &_token) {
-        t.addString(_token);
-        content.push_back(_token);
-    };
-
-    Tokenizer tok("../../test/data/sampleTestInput.txt");
-    REQUIRE(tok.isValid());
-
-    tok.getNexToken(" \n", addString);
-    t.save("../../output/sampleTestOut.txt");
-
-    Trie t2;
-    auto res = t2.load("../../output/sampleTestOut.txt");
-    REQUIRE(res == 0);
-
-    std::for_each(content.begin(), content.end(), [&t2](const string &_input) {
+    std::for_each(data.begin(), data.end(), [&t2](const wstring &_input) {
         REQUIRE(t2.contains(_input));
     });
 }
 
 TEST_CASE("TrieTest.sample-trie-save-and-load", "[Trie]") {
     Trie t;
-    vector<string> content;
+    vector<wstring> content;
 
-    auto addString = [&](const string &_token) {
+    auto addString = [&](const wstring &_token) {
         t.addString(_token);
         content.push_back(_token);
     };
@@ -261,51 +242,63 @@ TEST_CASE("TrieTest.sample-trie-save-and-load", "[Trie]") {
     Tokenizer tok("../../test/data/sampleTestInput.txt");
     REQUIRE(tok.isValid());
 
-    tok.getNexToken(" \n", addString);
+    tok.getNexToken(L" \n", addString);
     t.save("../../output/sampleTestOut.txt");
 
     Trie t2;
     auto res = t2.load("../../output/sampleTestOut.txt");
     REQUIRE(res == 0);
 
-    std::for_each(content.begin(), content.end(), [&t2](const string &_input) {
+    std::for_each(content.begin(), content.end(), [&t2](const wstring &_input) {
         REQUIRE(t2.contains(_input));
     });
 }
 
-TEST_CASE("TrieTest.PartialMatch") {
+TEST_CASE("TrieTest.PartialMatch", "[Trie]") {
     Trie t;
 
-    auto addString = [&](const string &_token) {
+    const vector<wstring> data = {
+            L"foo",
+            L"foob",
+            L"fooba",
+            L"foobar",
+            L"foobaz",
+    };
+    auto addString = [&](const wstring &_token) {
         t.addString(_token);
     };
+
+    std::for_each(data.begin(), data.end(), addString);
 
     Tokenizer tok("../../test/data/sampleTestInput.txt");
     REQUIRE(tok.isValid());
 
-    tok.getNexToken(" \n", addString);
+    tok.getNexToken(L" \n", addString);
 
-    REQUIRE(!t.contains("Pra"));
+    t.addString(L"foobar");
+
+    REQUIRE(!t.contains(L"Pra"));
+    REQUIRE(t.contains(L"foo"));
 }
 
-TEST_CASE("TrieTest.PartialMatchLoad") {
+TEST_CASE("TrieTest.PartialMatchLoad", "[Trie]") {
     Trie t;
 
-    auto addString = [&](const string &_token) {
+    auto addString = [&](const wstring &_token) {
         t.addString(_token);
     };
 
     Tokenizer tok("../../test/data/sampleTestInput.txt");
     REQUIRE(tok.isValid());
 
-    tok.getNexToken(" \n", addString);
+    tok.getNexToken(L" \n", addString);
     t.save("../../output/sampleTestOut.txt");
 
     Trie t2;
     auto res = t2.load("../../output/sampleTestOut.txt");
     REQUIRE(res == 0);
 
-    REQUIRE(!t2.contains("Pra"));
+    REQUIRE(!t2.contains(L"Pra"));
 }
 
 // TODO make trie contains case insensitive

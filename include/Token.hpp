@@ -9,14 +9,14 @@ namespace address_recognition {
     public:
         Token();
 
-        Token(const string &_value);
+        Token(const wstring &_value);
 
         TOKEN_TYPE getTokeType() const { return this->m_type; }
 
-        string getValue() const { return this->m_value; }
+        wstring getValue() const { return this->m_value; }
 
     private:
-        string m_value;
+        wstring m_value;
         TOKEN_TYPE m_type;
 
         bool isZIP() const;

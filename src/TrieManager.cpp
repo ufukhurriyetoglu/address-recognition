@@ -9,7 +9,6 @@ using boost::chrono::duration_cast;
 using boost::chrono::milliseconds;
 using boost::chrono::nanoseconds;
 
-
 int TrieManager::createTrie(const string &_inPath, const string &_outPath) {
     std::cout << "creating: " << _outPath << " from " << _inPath << std::endl;
 
@@ -19,15 +18,19 @@ int TrieManager::createTrie(const string &_inPath, const string &_outPath) {
         return 1;
     }
 
-    if (ifstream(_outPath).good()) {
-        logError(__FILE__, __LINE__, "Already exists: " + _outPath);
+    try {
+        if (wifstream(_outPath).good()) {
+            logError(__FILE__, __LINE__, "Already exists: " + _outPath);
+            return 2;
+        }
+    } catch (std::exception &ex) {
         return 2;
     }
 
     Trie t;
 
     high_resolution_clock::time_point start = high_resolution_clock::now();
-    tok.getNexToken(" \n", [&t](const string &_token) {
+    tok.getNexToken(L" \n", [&t](const wstring &_token) {
         t.addString(_token);
     });
     high_resolution_clock::time_point end = high_resolution_clock::now();
@@ -36,7 +39,7 @@ int TrieManager::createTrie(const string &_inPath, const string &_outPath) {
 
     int res = t.save(_outPath);
     if (res != 0) {
-        logError(__FILE__, __LINE__, "failed saving '" + _outPath + "'");
+        logError(__FILE__, __LINE__, L"failed saving '" + wstring(_outPath.begin(), _outPath.end()) + L"'");
         return 3;
     }
     return 0;
@@ -63,14 +66,14 @@ int TrieManager::loadTriesFromFiles(const vector<string> &_files,
             this->m_tries.push_back(std::move(trie));
         } else {
             _callbackError();
-            this->m_lastError = "unable to load: " + _path;
+            this->m_lastError = L"unable to load: " + wstring(_path.begin(), _path.end());
             logError(__FILE__, __LINE__, this->getLastError());
         }
     });
     return 0;
 }
 
-bool TrieManager::isTokenIn(const string &_query) {
+bool TrieManager::isTokenIn(const wstring &_query) {
     for (const auto &elem:this->m_tries) {
         if (elem->contains(_query)) {
             return true;

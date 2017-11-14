@@ -5,7 +5,7 @@ using address_recognition::enums::TOKEN_TYPE;
 
 Token::Token() {}
 
-Token::Token(const string &_value) {
+Token::Token(const wstring &_value) {
     this->m_value = _value;
     this->m_type = TOKEN_TYPE::NONE;
 
@@ -30,7 +30,8 @@ Token::Token(const string &_value) {
 bool Token::isZIP() const {
     auto isXDigitZip = [&](int x) -> bool {
         std::regex xDigitZip("(^[0-9]{" + std::to_string(x) + "}$)");
-        return std::regex_match(this->m_value, xDigitZip);
+//        return std::regex_match(this->m_value, xDigitZip);
+        return false;
     };
 
     return (isXDigitZip(4) ||
@@ -39,15 +40,18 @@ bool Token::isZIP() const {
 }
 
 bool Token::isComma() const {
-    return (this->m_value.compare(",") == 0);
+//    return (this->m_value.compare(",") == 0);
+    return false;
 }
 
 bool Token::capitalAtBeginning() const {
     std::regex re("(^[A-Z].*)");
-    return std::regex_match(this->m_value, re);
+//    return std::regex_match(this->m_value, re);
+    return false;
 }
 
 bool Token::isNumber() const {
     std::regex re("(^[0-9]+$)");
-    return std::regex_match(this->m_value, re);
+//    return std::regex_match(this->m_value, re);
+    return false;
 }

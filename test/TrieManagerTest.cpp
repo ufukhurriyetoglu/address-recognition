@@ -59,7 +59,7 @@ TEST_CASE("TrieManagerTest.AlreadyExisting", "[TrieManager]") {
     remove(paths.begin()->second);
 }
 
-TEST_CASE("Create and Load one trie", "[TrieManager]") {
+TEST_CASE("TrieManager.Create and Load one trie", "[TrieManager]") {
     std::map<string, string> paths = {
             {"../../test/data/sampleTestInput.txt", "../../output/test/tries/sampleTrie"}
     };
@@ -82,13 +82,13 @@ TEST_CASE("Create and Load one trie", "[TrieManager]") {
 
     REQUIRE(!error);
     REQUIRE(mgr.getTries().size() == 1);
-    REQUIRE(mgr.isTokenIn("Krhanice"));
+    REQUIRE(mgr.isTokenIn(L"Krhanice"));
     REQUIRE(mgr.getLastError().empty());
 
     remove(paths.begin()->second);
 }
 
-TEST_CASE("Load one invalid trie", "[TrieManager]") {
+TEST_CASE("TrieManager.Load one invalid trie", "[TrieManager]") {
     std::map<string, string> paths = {
             {"../../test/data/nonExistingFile.txt", "../../output/test/tries/nonExistingFile"}
     };
@@ -102,11 +102,11 @@ TEST_CASE("Load one invalid trie", "[TrieManager]") {
     mgr.loadTriesFromFiles({paths.begin()->second}, errHandler);
     REQUIRE(error);
     REQUIRE(mgr.getTries().size() == 0);
-    REQUIRE(!mgr.isTokenIn("Krhanice"));
+    REQUIRE(!mgr.isTokenIn(L"Krhanice"));
     REQUIRE(!mgr.getLastError().empty());
 }
 
-TEST_CASE("Create and Load more tries", "[TrieManager]") {
+TEST_CASE("TrieManager.Create and Load more tries", "[TrieManager]") {
     std::map<string, string> paths = {
             {"../../test/data/dummyTestInput.txt",  "../../output/test/tries/dummyTestTrie"},
             {"../../test/data/sampleTestInput.txt", "../../output/test/tries/sampleTestTrie"},
@@ -139,9 +139,9 @@ TEST_CASE("Create and Load more tries", "[TrieManager]") {
     REQUIRE(!error);
     REQUIRE(numErrors == 0);
     REQUIRE(mgr.getTries().size() == 3);
-    REQUIRE(mgr.isTokenIn("Krhanice"));
-    REQUIRE(mgr.isTokenIn("bar"));
-    REQUIRE(mgr.isTokenIn("mtple"));
+    REQUIRE(mgr.isTokenIn(L"Krhanice"));
+    REQUIRE(mgr.isTokenIn(L"bar"));
+    REQUIRE(mgr.isTokenIn(L"mtple"));
     REQUIRE(mgr.getLastError().empty());
 
     for (const auto &path:triePaths) {
@@ -149,7 +149,7 @@ TEST_CASE("Create and Load more tries", "[TrieManager]") {
     }
 }
 
-TEST_CASE("Load more invalid tries", "[TrieManager]") {
+TEST_CASE("TrieManager.Load more invalid tries", "[TrieManager]") {
     std::map<string, string> paths = {
             {"../../test/data/dummyTestInput.txt", "../../output/test/tries/dummyTestTrie"},
             {"../../test/data/nonsense.txt",       "../../output/test/tries/sampleTestTrie"},
@@ -168,19 +168,19 @@ TEST_CASE("Load more invalid tries", "[TrieManager]") {
     REQUIRE(error);
     REQUIRE(numErrors == 2);
 
+    vector<string> triePaths;
+    for (auto it = paths.begin(); it != paths.end(); it++) {
+        triePaths.push_back(it->second);
+    }
+
     numErrors = 0;
+    error = false;
     auto errHandler2 = [&error, &numErrors]() {
         error = true;
         numErrors++;
     };
 
-    error = false;
     TrieManager mgr;
-
-    vector<string> triePaths;
-    for (auto it = paths.begin(); it != paths.end(); it++) {
-        triePaths.push_back(it->second);
-    }
     mgr.loadTriesFromFiles(triePaths, errHandler2);
 
     REQUIRE(error);

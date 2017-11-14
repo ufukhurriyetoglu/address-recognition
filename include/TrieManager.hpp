@@ -15,9 +15,9 @@ namespace address_recognition {
         int loadTriesFromFiles(const vector<string> &_files,
                                const std::function<void()> &_callbackError);
 
-        bool isTokenIn(const string &_query);
+        bool isTokenIn(const wstring &_query);
 
-        const string &getLastError() const { return m_lastError; }
+        const wstring &getLastError() const { return m_lastError; }
 
         const vector<unique_ptr<Trie>> &getTries() const { return this->m_tries; }
 
@@ -28,6 +28,6 @@ namespace address_recognition {
 
         vector<unique_ptr<Trie>> m_tries;
 
-        string m_lastError;
+        wstring m_lastError;
     };
 }

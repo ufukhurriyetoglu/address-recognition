@@ -15,7 +15,7 @@ namespace address_recognition {
 
         void run();
 
-        const vector<string> &getTokens() const { return this->m_tokens; }
+        const vector<wstring> &getTokens() const { return this->m_tokens; }
 
         void addTriePath(const string &_path);
 
@@ -27,7 +27,7 @@ namespace address_recognition {
 
     private:
         Tokenizer &m_tokenizer;
-        vector<string> m_tokens;
+        vector<wstring> m_tokens;
         TrieManager m_trieMgr;
         vector<string> m_triePaths;
         bool m_valid = false;
