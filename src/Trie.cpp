@@ -57,9 +57,12 @@ void Trie::print(bool _formatted) {
 }
 
 bool Trie::contains(const wstring &_query) {
+    wstring query(_query);
+    std::transform(query.begin(), query.end(), query.begin(), towlower);
+
     TrieNode *curr = this->m_head.get();
-    for (int i = 0; i < _query.size(); ++i) {
-        auto son = curr->getSon(_query[i]);
+    for (int i = 0; i < query.size(); ++i) {
+        auto son = curr->getSon(query[i]);
         if (son == nullptr) {
             return false;
         }
@@ -70,16 +73,19 @@ bool Trie::contains(const wstring &_query) {
 }
 
 void Trie::addString(const wstring &_newString) {
-    if (this->contains(_newString)) {
+    wstring tmp(_newString);
+    std::transform(tmp.begin(), tmp.end(), tmp.begin(), towlower);
+
+    if (this->contains(tmp)) {
         return;
     }
     TrieNode *curr = this->m_head.get();
-    for (int i = 0; i < _newString.size(); ++i) {
-        auto son = curr->getSon(_newString[i]);
+    for (int i = 0; i < tmp.size(); ++i) {
+        auto son = curr->getSon(tmp[i]);
         if (son == nullptr) {
-            curr->addSon(_newString[i]);
+            curr->addSon(tmp[i]);
         }
-        curr = curr->getSon(_newString[i]);
+        curr = curr->getSon(tmp[i]);
     }
     curr->setIsLast(true);
 }

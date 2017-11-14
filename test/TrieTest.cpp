@@ -7,17 +7,42 @@ using address_recognition::Trie;
 using address_recognition::Token;
 using address_recognition::Tokenizer;
 
-std::wstring random_string(size_t _length) {
+
+class RandomNumberGenerator {
+    static std::default_random_engine m_rd;
+public:
+    static int getRandomNumber(int _lower, int _upper) {
+        std::uniform_int_distribution<> randomizer(_lower, _upper);
+        return randomizer(m_rd);
+    }
+};
+
+std::default_random_engine   RandomNumberGenerator::m_rd{static_cast<long unsigned int>(time(0))};
+
+std::wstring getRandomString(size_t _length) {
     auto randchar = []() -> wchar_t {
-        static std::random_device rd;
-        static std::mt19937 gen(rd());
         const wchar_t charset[] =
                 L"0123456789"
                         L"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                         L"abcdefghijklmnopqrstuvwxyz";
         auto charsetSize = wcslen(charset);
-        static std::uniform_int_distribution<> dis(0, charsetSize - 1);
-        return charset[dis(gen)];
+        return charset[RandomNumberGenerator::getRandomNumber(0, charsetSize - 1)];
+    };
+
+    std::wstring str(_length, L'\0');
+    std::generate_n(str.begin(), _length, randchar);
+    return str;
+}
+
+std::wstring getRandomStringExtra(size_t _length) {
+    auto randchar = []() -> wchar_t {
+        const wchar_t charset[] =
+                L"0123456789"
+                        L"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                        L"ěščřžýáíéůúň"
+                        L"abcdefghijklmnopqrstuvwxyz";
+        auto charsetSize = wcslen(charset);
+        return charset[RandomNumberGenerator::getRandomNumber(0, charsetSize - 1)];
     };
 
     std::wstring str(_length, L'\0');
@@ -90,7 +115,7 @@ TEST_CASE("TrieTest.random_gen", "[Trie][generate][random]") {
     int ctr = 0;
     int threshold = 128;
     while (true) {
-        data.push_back(random_string(val));
+        data.push_back(getRandomString(val));
         if (ctr < threshold) {
             val++;
         } else {
@@ -178,7 +203,7 @@ TEST_CASE("TrieTest.random-trie-save-load", "[Trie][save][load][CZ][zip]") {
     const size_t numOfString = 5;
     const size_t lenOfStrings = 5;
     for (size_t i = 0; i < numOfString; i++) {
-        data.push_back(random_string(lenOfStrings));
+        data.push_back(getRandomString(lenOfStrings));
     }
 
     string path("../../output/randomTestOut.txt");
@@ -301,4 +326,59 @@ TEST_CASE("TrieTest.PartialMatchLoad", "[Trie]") {
     REQUIRE(!t2.contains(L"Pra"));
 }
 
-// TODO make trie contains case insensitive
+TEST_CASE("TrieTest.CaseInsensitiveBehavior", "[Trie]") {
+    const vector<wstring> data = {
+            L"foobar",
+            L"fooBar",
+            L"fobar",
+            L"foObar",
+            L"foobaR",
+            L"FOOBAR",
+            L"foobarz",
+            L"foobarZ",
+            L"foobaRZ",
+            L"foa",
+    };
+
+    Trie t;
+
+    auto addString = [&](const wstring &_token) {
+        t.addString(_token);
+    };
+
+    std::for_each(data.begin(), data.end(), addString);
+
+    REQUIRE(t.contains(L"foobar"));
+    REQUIRE(t.contains(L"FOOBAR"));
+    REQUIRE(t.contains(L"FOa"));
+}
+
+TEST_CASE("TrieTest.randomExtraGen", "[Trie][generate][random]") {
+    Trie t;
+    vector<wstring> data = {};
+
+    size_t val = 0;
+    const int max_iter = 64;
+    int ctr = 0;
+    int threshold = 32;
+    while (true) {
+        data.push_back(getRandomStringExtra(val));
+        if (ctr < threshold) {
+            val++;
+        } else {
+            val--;
+        }
+        ctr++;
+        if (ctr >= max_iter || val <= 0) {
+            break;
+        }
+    }
+
+    std::for_each(data.begin(), data.end(), [&t](const wstring &_input) {
+        t.addString(_input);
+    });
+
+    std::for_each(data.begin(), data.end(), [&t](const wstring &_input) {
+        REQUIRE(t.contains(_input));
+    });
+}
