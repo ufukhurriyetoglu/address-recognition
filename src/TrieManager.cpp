@@ -74,7 +74,7 @@ int TrieManager::loadTriesFromFiles(const vector<string> &_files,
 }
 
 bool TrieManager::isTokenIn(const wstring &_query) {
-    for (const auto &elem:this->m_tries) {
+    for (auto &elem: this->m_tries) {
         if (elem->contains(_query)) {
             return true;
         }
