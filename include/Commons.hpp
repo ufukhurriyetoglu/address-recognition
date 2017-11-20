@@ -10,14 +10,6 @@ using std::wstring;
 
 namespace address_recognition {
     namespace logging {
-        void logInfo(const wstring &_msg) {
-            std::wcout << _msg;
-        }
-
-        void logInfoLn(const wstring &_msg) {
-            std::wcout << _msg << L"\n";
-        }
-
         template<typename T>
         void logInfo(T v) {
             std::wcout << v << L" ";

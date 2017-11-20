@@ -57,27 +57,37 @@ void TrieManager::createTries(const std::map<string, string> &_paths,
                   });
 }
 
-int TrieManager::loadTriesFromFiles(const vector<string> &_files,
+int TrieManager::addSectionFromFile(const string &_sectionName,
+                                    const string &_file,
                                     const std::function<void()> &_callbackError) {
-    std::for_each(_files.begin(), _files.end(), [&](const string &_path) {
-        auto trie = std::make_unique<Trie>();
-        auto res = trie->load(_path);
-        if (res == 0) {
-            this->m_tries.push_back(std::move(trie));
-        } else {
-            _callbackError();
-            this->m_lastError = L"unable to load: " + wstring(_path.begin(), _path.end());
-            logError(__FILE__, __LINE__, this->getLastError());
-        }
-    });
+    auto it = this->m_tries.find(_sectionName);
+    if (it != this->m_tries.end()) {
+        logInfoLn(L"Section: ", wstring(_sectionName.begin(), _sectionName.end()), " already exists");
+        _callbackError();
+        return 1;
+    }
+
+    auto trie = std::make_unique<Trie>();
+    auto res = trie->load(_file);
+    if (res == 0) {
+        this->m_tries.insert(std::make_pair(_sectionName, std::move(trie)));
+    } else {
+        _callbackError();
+        this->m_lastError = L"unable to load: " + wstring(_file.begin(), _file.end());
+        logError(__FILE__, __LINE__, this->getLastError());
+    }
     return 0;
 }
 
-bool TrieManager::isTokenIn(const wstring &_query) {
+bool TrieManager::contains(const wstring &_query) {
     for (auto &elem: this->m_tries) {
-        if (elem->contains(_query)) {
+        if (elem.second->contains(_query)) {
             return true;
         }
     }
+    return false;
+}
+
+bool TrieManager::containsInSection(const string &_sectionName, const wstring &_query) {
     return false;
 }

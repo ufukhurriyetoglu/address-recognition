@@ -12,21 +12,24 @@ namespace address_recognition {
                 const std::map<string, string> &_paths,
                 const std::function<void(int _errNo)> &_callbackError);
 
-        int loadTriesFromFiles(const vector<string> &_files,
+        int addSectionFromFile(const string &_sectionName,
+                               const string &_file,
                                const std::function<void()> &_callbackError);
 
-        bool isTokenIn(const wstring &_query);
+        bool contains(const wstring &_query);
+
+        bool containsInSection(const string &_sectionName, const wstring &_query);
 
         const wstring &getLastError() const { return m_lastError; }
 
-        const vector<unique_ptr<Trie>> &getTries() const { return this->m_tries; }
+        const std::map<string, unique_ptr<Trie>> &getTries() const { return this->m_tries; }
 
         bool empty() const { return this->m_tries.empty(); }
 
     private:
         static int createTrie(const string &_inPath, const string &_outPath);
 
-        vector<unique_ptr<Trie>> m_tries;
+        std::map<string, unique_ptr<Trie>> m_tries{};
 
         wstring m_lastError;
     };

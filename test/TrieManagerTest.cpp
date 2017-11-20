@@ -78,11 +78,11 @@ TEST_CASE("TrieManager.Create and Load one trie", "[TrieManager]") {
     };
 
     TrieManager mgr;
-    mgr.loadTriesFromFiles({paths.begin()->second}, errHandler2);
+    mgr.addSectionFromFile("sample", {paths.begin()->second}, errHandler2);
 
     REQUIRE(!error);
     REQUIRE(mgr.getTries().size() == 1);
-    REQUIRE(mgr.isTokenIn(L"Krhanice"));
+    REQUIRE(mgr.contains(L"Krhanice"));
     REQUIRE(mgr.getLastError().empty());
 
     remove(paths.begin()->second);
@@ -99,10 +99,10 @@ TEST_CASE("TrieManager.Load one invalid trie", "[TrieManager]") {
     };
 
     TrieManager mgr;
-    mgr.loadTriesFromFiles({paths.begin()->second}, errHandler);
+    mgr.addSectionFromFile("none", {paths.begin()->second}, errHandler);
     REQUIRE(error);
     REQUIRE(mgr.getTries().size() == 0);
-    REQUIRE(!mgr.isTokenIn(L"Krhanice"));
+    REQUIRE(!mgr.contains(L"Krhanice"));
     REQUIRE(!mgr.getLastError().empty());
 }
 
@@ -134,14 +134,16 @@ TEST_CASE("TrieManager.Create and Load more tries", "[TrieManager]") {
     for (auto it = paths.begin(); it != paths.end(); it++) {
         triePaths.push_back(it->second);
     }
-    mgr.loadTriesFromFiles(triePaths, errHandler2);
+    mgr.addSectionFromFile("dummy0", triePaths[0], errHandler2);
+    mgr.addSectionFromFile("dummy1", triePaths[1], errHandler2);
+    mgr.addSectionFromFile("dummy2", triePaths[2], errHandler2);
 
     REQUIRE(!error);
     REQUIRE(numErrors == 0);
     REQUIRE(mgr.getTries().size() == 3);
-    REQUIRE(mgr.isTokenIn(L"Krhanice"));
-    REQUIRE(mgr.isTokenIn(L"bar"));
-    REQUIRE(mgr.isTokenIn(L"mtple"));
+    REQUIRE(mgr.contains(L"Krhanice"));
+    REQUIRE(mgr.contains(L"bar"));
+    REQUIRE(mgr.contains(L"mtple"));
     REQUIRE(mgr.getLastError().empty());
 
     for (const auto &path:triePaths) {
@@ -181,7 +183,9 @@ TEST_CASE("TrieManager.Load more invalid tries", "[TrieManager]") {
     };
 
     TrieManager mgr;
-    mgr.loadTriesFromFiles(triePaths, errHandler2);
+    mgr.addSectionFromFile("dummy0", triePaths[0], errHandler2);
+    mgr.addSectionFromFile("dummy1", triePaths[1], errHandler2);
+    mgr.addSectionFromFile("dummy2", triePaths[2], errHandler2);
 
     REQUIRE(error);
     REQUIRE(numErrors == 2);
