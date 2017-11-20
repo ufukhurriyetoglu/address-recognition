@@ -19,3 +19,5 @@ using std::wifstream;
 using std::wofstream;
 using std::unique_ptr;
 using address_recognition::logging::logError;
+using address_recognition::logging::logInfo;
+using address_recognition::logging::logInfoLn;
