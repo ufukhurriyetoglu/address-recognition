@@ -26,6 +26,8 @@ namespace address_recognition {
 
         bool contains(const wstring &_query);
 
+        bool containsInSection(const wstring &_sectionName, const wstring &_query);
+
         void setSeparators(const wstring &_newSeps);
 
     private:

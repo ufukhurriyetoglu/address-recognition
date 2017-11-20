@@ -10,7 +10,9 @@ using address_recognition::Tokenizer;
 
 std::map<string, string> paths = {
         {"../../data/extracted/zip/CZ.txt", "../../data/tries/zip/CZ.trie"},
-        {"../../data/extracted/zip/DE.txt", "../../data/tries/zip/DE.trie"}
+        {"../../data/extracted/zip/DE.txt", "../../data/tries/zip/DE.trie"},
+        {"../../data/extracted/city/DE.txt", "../../data/tries/city/DE.trie"},
+        {"../../data/extracted/city/CZ.txt", "../../data/tries/city/CZ.trie"}
 };
 
 void generateTries() {
@@ -34,6 +36,9 @@ TEST_CASE("RuntimeParser.BasicRead", "[Parser][Runtime]") {
     p.run();
 }
 
+void parseTokenGroups(const vector<vector<wstring>> &_tokensOfInterest, const Parser &_parser) {
+
+}
 
 TEST_CASE("RuntimeParser.GrammarParse", "[Parser][Runtime]") {
     generateTries();
@@ -45,6 +50,8 @@ TEST_CASE("RuntimeParser.GrammarParse", "[Parser][Runtime]") {
 
     p.addSection("zip", "CZ", {"../../data/tries/zip/CZ.trie"});
     p.addSection("zip", "DE", {"../../data/tries/zip/DE.trie"});
+    p.addSection("city", "CZ", {"../../data/tries/city/CZ.trie"});
+    p.addSection("city", "DE", {"../../data/tries/city/DE.trie"});
 
     REQUIRE(p.isValid());
 
@@ -72,8 +79,7 @@ TEST_CASE("RuntimeParser.GrammarParse", "[Parser][Runtime]") {
             }
         };
 
-        p.setSeparators(L"\n \r,");
-        p.run(handler);
+        p.run(L" ,\n", handler);
 
         logInfoLn(L"Tokens groups size: ", tokensOfInterest.size());
 
@@ -86,5 +92,7 @@ TEST_CASE("RuntimeParser.GrammarParse", "[Parser][Runtime]") {
             logInfoLn(L"____", "");
             i++;
         }
+
+        parseTokenGroups(tokensOfInterest, p);
     }
 }
