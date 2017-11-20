@@ -7,46 +7,46 @@ Parser::Parser(Tokenizer &_tokenizer) :
         m_tokenizer(_tokenizer) {
 }
 
-void Parser::run() {
-    vector<int> consecutiveMatches;
-    int counter = 0;
-
-    this->m_tokenizer.getNexToken([&](const wstring &_token) {
-        this->m_tokens.push_back(_token);
-        if (this->m_trieMgr.isTokenIn(_token)) {
-            if (_token.size() > 2) {
-                counter++;
-                std::wcout << L"found match: " << _token << std::endl;
-            }
-        } else {
-            if (counter > 0) {
-                consecutiveMatches.push_back(counter);
-                counter = 0;
-            }
-        }
-    });
-
-    for (auto elem:consecutiveMatches) {
-        std::cout << "found: " << elem << " in a row" << std::endl;
-    }
+void Parser::run(const std::function<void(const wstring &_token)> &_callback) {
+    this->m_tokenizer.getNexToken(this->m_separators, _callback);
 }
 
-void Parser::addTriePath(const string &_path) {
-    this->m_triePaths.push_back(_path);
-}
 
-void Parser::addTriePath(const vector<string> &_paths) {
-    for (const auto &elem:_paths) {
-        this->m_triePaths.push_back(elem);
-    }
-}
-
-void Parser::loadTries() {
+void Parser::addSection(const string &_parserSectionName,
+                        const string &_trieMgrSectionName,
+                        const string &_path) {
     bool status = true;
     auto errorHandler = [&status]() {
         logError(__FILE__, __LINE__, L"error loading tries");
         status = false;
     };
-    this->m_trieMgr.loadTriesFromFiles(this->m_triePaths, errorHandler);
+
+    auto it = this->m_parserSections.find(_parserSectionName);
+    if (it != this->m_parserSections.end()) {
+        it->second->addSectionFromFile(_trieMgrSectionName, _path, errorHandler);
+    } else {
+        unique_ptr<TrieManager> tmgr = std::make_unique<TrieManager>();
+        tmgr->addSectionFromFile(_trieMgrSectionName, _path, errorHandler);
+        this->m_parserSections.insert(std::make_pair(_parserSectionName, std::move(tmgr)));
+    }
+
     this->m_valid = status;
+}
+
+
+void Parser::run(const wstring &_seps, const std::function<void(const wstring &)> &_callback) {
+    this->m_tokenizer.getNexToken(_seps, _callback);
+}
+
+void Parser::setSeparators(const wstring &_newSeps) {
+    this->m_separators = _newSeps;
+}
+
+bool Parser::contains(const wstring &_query) {
+    for(const auto &elem : this->m_parserSections){
+        if(elem.second->contains(_query)){
+            return true;
+        }
+    }
+    return false;
 }
