@@ -5,12 +5,15 @@
 #include "TrieManager.hpp"
 #include "reference.hpp"
 
+#include <boost/circular_buffer.hpp>
+
 using address_recognition::Parser;
 using address_recognition::Tokenizer;
+using boost::circular_buffer;
 
 std::map<string, string> paths = {
-        {"../../data/extracted/zip/CZ.txt", "../../data/tries/zip/CZ.trie"},
-        {"../../data/extracted/zip/DE.txt", "../../data/tries/zip/DE.trie"},
+        {"../../data/extracted/zip/CZ.txt",  "../../data/tries/zip/CZ.trie"},
+        {"../../data/extracted/zip/DE.txt",  "../../data/tries/zip/DE.trie"},
         {"../../data/extracted/city/DE.txt", "../../data/tries/city/DE.trie"},
         {"../../data/extracted/city/CZ.txt", "../../data/tries/city/CZ.trie"}
 };
@@ -37,7 +40,23 @@ TEST_CASE("RuntimeParser.BasicRead", "[Parser][Runtime]") {
 }
 
 void parseTokenGroups(const vector<vector<wstring>> &_tokensOfInterest, const Parser &_parser) {
-
+    for (const vector<wstring> &tokenGroup : _tokensOfInterest) {
+        int score = 0;
+        for (const wstring &groupElem : tokenGroup) {
+//            logInfoLn(L"elem: ", groupElem);
+            if (_parser.containsInSection("city", groupElem)) {
+                logInfo(L"Got elem of city", groupElem, "\n");
+                score++;
+            }
+            if (_parser.containsInSection("zip", groupElem)) {
+                logInfo(L"Got elem of zip", groupElem, "\n");
+                score++;
+            }
+            //some number not zip
+            //some text not city
+        }
+        logInfoLn(L"Group score: ", score, "\n");
+    }
 }
 
 TEST_CASE("RuntimeParser.GrammarParse", "[Parser][Runtime]") {
@@ -58,20 +77,28 @@ TEST_CASE("RuntimeParser.GrammarParse", "[Parser][Runtime]") {
     {
         vector<vector<wstring>> tokensOfInterest;
         vector<wstring> tokenGroup;
-        const int THRESHOLD = 3;
+        const int THRESHOLD = 5;
         const int MIN_GROUP_SIZE = 3;
         int thrCtr = 0;
+        circular_buffer<wstring> cb(THRESHOLD);
 
         auto handler = [&](const wstring &_token) {
             if (p.contains(_token)) {
                 tokenGroup.push_back(_token);
             } else {
                 thrCtr++;
+                if (!tokenGroup.empty()) {
+                    tokenGroup.push_back(_token);
+                } else {
+                    cb.push_back(_token);
+                }
                 if (thrCtr > THRESHOLD) {
                     thrCtr = 0;
                     if (!tokenGroup.empty()) {
-                        if (tokenGroup.size() >= MIN_GROUP_SIZE) {
+                        if (tokenGroup.size() > MIN_GROUP_SIZE) {
+                            tokenGroup.insert(tokenGroup.begin(), cb.begin(), cb.end());
                             tokensOfInterest.push_back(tokenGroup);
+//                            cb.clear();
                         }
                         tokenGroup.clear();
                     }
@@ -80,18 +107,6 @@ TEST_CASE("RuntimeParser.GrammarParse", "[Parser][Runtime]") {
         };
 
         p.run(L" ,\n", handler);
-
-        logInfoLn(L"Tokens groups size: ", tokensOfInterest.size());
-
-        int i = 0;
-        for (auto &elem : tokensOfInterest) {
-            logInfoLn(L"Group: ", i);
-            for (auto &elem2 : elem) {
-                logInfoLn(L"Elem: ", elem2);
-            }
-            logInfoLn(L"____", "");
-            i++;
-        }
 
         parseTokenGroups(tokensOfInterest, p);
     }

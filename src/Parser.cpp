@@ -42,9 +42,19 @@ void Parser::setSeparators(const wstring &_newSeps) {
     this->m_separators = _newSeps;
 }
 
-bool Parser::contains(const wstring &_query) {
-    for(const auto &elem : this->m_parserSections){
-        if(elem.second->contains(_query)){
+bool Parser::contains(const wstring &_query) const {
+    for (const auto &elem : this->m_parserSections) {
+        if (elem.second->contains(_query)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Parser::containsInSection(const string &_sectionName, const wstring &_query) const {
+    auto it = this->m_parserSections.find(_sectionName);
+    if (it != this->m_parserSections.end()) {
+        if (it->second->contains(_query)) {
             return true;
         }
     }

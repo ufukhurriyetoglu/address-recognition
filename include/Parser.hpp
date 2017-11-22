@@ -24,9 +24,9 @@ namespace address_recognition {
             return this->m_valid && this->m_tokenizer.isValid();
         }
 
-        bool contains(const wstring &_query);
+        bool contains(const wstring &_query) const;
 
-        bool containsInSection(const wstring &_sectionName, const wstring &_query);
+        bool containsInSection(const string &_sectionName, const wstring &_query) const;
 
         void setSeparators(const wstring &_newSeps);
 
