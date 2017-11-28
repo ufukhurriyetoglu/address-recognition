@@ -6,6 +6,8 @@
 #include "reference.hpp"
 
 #include <boost/circular_buffer.hpp>
+#include <boost/algorithm/string.hpp>
+#include <boost/algorithm/string/classification.hpp>
 
 using address_recognition::Parser;
 using address_recognition::Tokenizer;
@@ -39,21 +41,37 @@ TEST_CASE("RuntimeParser.BasicRead", "[Parser][Runtime]") {
     p.run();
 }
 
+inline bool isStreetNum(const wstring &_query) {
+    std::wregex r(LR"(([0-9]{1,}[\/]*[a-zA-Z]*[0-9]*[a-zA-Z]*))");
+    return std::regex_match(boost::trim_copy(_query), r);
+}
+
+inline bool isStreet(const wstring &_query) {
+    return boost::all(_query, boost::is_alpha());
+}
+
 void parseTokenGroups(const vector<vector<wstring>> &_tokensOfInterest, const Parser &_parser) {
     for (const vector<wstring> &tokenGroup : _tokensOfInterest) {
-        int score = 0;
+        int score = 0, city = 0, zip = 0, streetName = 0, streetNum = 0;
         for (const wstring &groupElem : tokenGroup) {
-//            logInfoLn(L"elem: ", groupElem);
             if (_parser.containsInSection("city", groupElem)) {
                 logInfo(L"Got elem of city", groupElem, "\n");
-                score++;
+                city++;
+            } else {
+                if (isStreet(groupElem)) {
+                    logInfo(L"Got street name", groupElem, "\n");
+                    streetName++;
+                }
             }
             if (_parser.containsInSection("zip", groupElem)) {
                 logInfo(L"Got elem of zip", groupElem, "\n");
-                score++;
+                zip++;
+            } else {
+                if (isStreetNum(groupElem)) {
+                    logInfo(L"Got street num", groupElem, "\n");
+                    streetNum++;
+                }
             }
-            //some number not zip
-            //some text not city
         }
         logInfoLn(L"Group score: ", score, "\n");
     }
@@ -98,7 +116,6 @@ TEST_CASE("RuntimeParser.GrammarParse", "[Parser][Runtime]") {
                         if (tokenGroup.size() > MIN_GROUP_SIZE) {
                             tokenGroup.insert(tokenGroup.begin(), cb.begin(), cb.end());
                             tokensOfInterest.push_back(tokenGroup);
-//                            cb.clear();
                         }
                         tokenGroup.clear();
                     }
