@@ -89,5 +89,11 @@ bool TrieManager::contains(const wstring &_query) {
 }
 
 bool TrieManager::containsInSection(const string &_sectionName, const wstring &_query) {
+    auto it = this->m_tries.find(_sectionName);
+    if (it != this->m_tries.end()) {
+        if (it->second->contains(_query)) {
+            return true;
+        }
+    }
     return false;
 }
