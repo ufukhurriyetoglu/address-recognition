@@ -52,27 +52,70 @@ inline bool isStreet(const wstring &_query) {
 
 void parseTokenGroups(const vector<vector<wstring>> &_tokensOfInterest, const Parser &_parser) {
     for (const vector<wstring> &tokenGroup : _tokensOfInterest) {
-        int score = 0, city = 0, zip = 0, streetName = 0, streetNum = 0;
-        for (const wstring &groupElem : tokenGroup) {
+        int city = 0, zip = 0, streetNum = 0;
+        double score = 0.0, streetName = 0.0;
+        int tokenPosition = 0;
+        for (const wstring &groupElem: tokenGroup) {
+            logInfo(L"elem: ", groupElem, L"\n");
             if (_parser.containsInSection("city", groupElem)) {
-                logInfo(L"Got elem of city", groupElem, "\n");
-                city++;
+//                logInfo(L"Got elem of city", groupElem, "\n");
+                if (groupElem.size() > 1) {
+                    city++;
+                }
+                if (city > 3) {
+                    city -= 2;
+                }
             } else {
                 if (isStreet(groupElem)) {
-                    logInfo(L"Got street name", groupElem, "\n");
-                    streetName++;
+//                    logInfo(L"Got street name", groupElem, "\n");
+                    streetName += 2.2;
+                    if (tokenPosition <= 3) {
+                        streetName -= 0.5;
+                    } else if (tokenGroup.size() - tokenPosition <= 3) {
+                        streetName -= 0.5;
+                    }
+                    // if streename first or last 3 elemes, than lower score
                 }
             }
             if (_parser.containsInSection("zip", groupElem)) {
-                logInfo(L"Got elem of zip", groupElem, "\n");
+//                logInfo(L"Got elem of zip", groupElem, "\n");
                 zip++;
             } else {
                 if (isStreetNum(groupElem)) {
-                    logInfo(L"Got street num", groupElem, "\n");
+//                    logInfo(L"Got street num", groupElem, "\n");
                     streetNum++;
                 }
             }
+            tokenPosition = 0;
         }
+
+        if (zip) {
+            score += 4;
+        } else {
+            score -= 0.5;
+        }
+        if (streetNum == 1 || streetNum == 2 || streetNum == 3) {
+            score += 3;
+        } else {
+            if (streetNum == 0) {
+                score -= 1;
+            } else {
+                score++;
+            }
+        }
+
+        score += city;
+
+//        if (streetName <= 4) {
+//            score += 2;
+//        } else {
+//            score += 0.5;
+//        }
+        score += streetName;
+//        if (streetName == 2 || streetName == 3) {
+//            score += 3;
+//        }
+//        score += (5 / streetName);
         logInfoLn(L"Group score: ", score, "\n");
     }
 }
@@ -80,7 +123,8 @@ void parseTokenGroups(const vector<vector<wstring>> &_tokensOfInterest, const Pa
 TEST_CASE("RuntimeParser.GrammarParse", "[Parser][Runtime]") {
     generateTries();
 
-    Tokenizer tok("../../data/txt/loremIpsum1.txt");
+//    Tokenizer tok("../../data/txt/loremIpsum1.txt");
+    Tokenizer tok("../../data/input/4.txt");
     REQUIRE(tok.isValid());
 
     Parser p(tok);
@@ -123,7 +167,7 @@ TEST_CASE("RuntimeParser.GrammarParse", "[Parser][Runtime]") {
             }
         };
 
-        p.run(L" ,\n", handler);
+        p.run(L" ,\n\r\n", handler);
 
         parseTokenGroups(tokensOfInterest, p);
     }
