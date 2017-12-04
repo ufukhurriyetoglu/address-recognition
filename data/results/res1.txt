@@ -1,0 +1,2309 @@
+elem:  spolecnosti
+elem:  M&M
+elem:  reality
+elem:  holding
+elem:  a.s.
+elem:  70200
+elem:  Ostrava
+elem:  Zobrazit
+elem:  na
+elem:  mape
+elem:  E-mail:
+elem:  info@mmreality.cz
+elem:  Sídlo
+elem:  spolecnosti
+Group score:  15.2
+
+elem:  reality
+elem:  holding
+elem:  a.s.
+elem:  Krakovská
+elem:  583/9
+elem:  11000
+elem:  Praha
+elem:  1
+elem:  Zobrazit
+elem:  na
+elem:  mape
+elem:  ICO:
+elem:  27487768
+elem:  DIC:
+elem:  CZ27487768
+Group score:  15.8
+
+elem:  je
+elem:  zapsaná
+elem:  do
+elem:  obch.
+elem:  rejstríku
+elem:  u
+elem:  Mestského
+elem:  soudu
+elem:  v
+elem:  Praze
+elem:  oddíl
+elem:  B
+elem:  vložka
+elem:  14537
+Group score:  9.3
+
+elem:  kraj11
+elem:  pobocek
+elem:  Liberecký
+elem:  kraj10
+elem:  pobocek
+elem:  Moravskoslezský
+elem:  kraj19
+elem:  pobocek
+elem:  Olomoucký
+elem:  kraj10
+elem:  pobocek
+Group score:  6.3
+
+elem:  je
+elem:  pro
+elem:  Vás
+elem:  pripravena
+elem:  naše
+elem:  Zelená
+elem:  linka.
+elem:  ©
+elem:  2016
+elem:  M&M
+elem:  reality
+elem:  M&M
+Group score:  10.3
+
+elem:  k
+elem:  poskytování
+elem:  služeb
+elem:  personalizaci
+elem:  reklam
+elem:  a
+elem:  analýze
+elem:  návštevnosti
+elem:  soubory
+elem:  cookie.
+Group score:  5.3
+
+elem:  Prejít
+elem:  na
+elem:  obsahPrejít
+elem:  na
+elem:  navigaci
+elem:  Všeobecná
+elem:  zdravotní
+elem:  pojištovna
+Group score:  2.2
+
+elem:  VZP
+elem:  CRÚstredí
+elem:  VZP
+elem:  Orlická
+elem:  2020/4
+elem:  Vinohrady
+elem:  13000
+elem:  Praha
+elem:  3
+elem:  Ceská
+elem:  republika
+Group score:  14.1
+
+elem:  pobocky
+elem:  Hledaná
+elem:  pobocka:
+elem:  Obec
+elem:  ulice...
+elem:  Praha
+elem:  1
+elem:  -
+elem:  Florentinum
+elem:  Brno-mesto
+elem:  Benešova
+elem:  10
+elem:  Ostrava-Poruba
+elem:  Hlavní
+elem:  trída
+elem:  686/102
+Group score:  10.6
+
+elem:  z
+elem:  Vás
+elem:  kterí
+elem:  potrebujete
+elem:  poradit
+elem:  v
+elem:  nenadálé
+elem:  nebo
+elem:  nové
+elem:  situaci.
+elem:  Mužete
+elem:  nám
+Group score:  6.3
+
+elem:  apod.
+elem:  dotazy
+elem:  Vám
+elem:  odpovíme
+elem:  telefonicky
+elem:  v
+elem:  dobe
+elem:  od
+elem:  8.00
+elem:  do
+elem:  18.00
+elem:  hodin:
+Group score:  7
+
+elem:  apod.
+elem:  dotazy
+elem:  Vám
+elem:  odpovíme
+elem:  telefonicky
+elem:  na
+elem:  telefonní
+elem:  lince
+elem:  952
+elem:  222
+elem:  222
+elem:  (jak
+Group score:  8.6
+
+elem:  Poštovní
+elem:  adresa
+elem:  Písemnou
+elem:  korespondenci
+elem:  zasílejte
+elem:  na
+elem:  nejbližší
+elem:  pobocku
+elem:  VZP
+elem:  ve
+elem:  vašem
+elem:  kraji.
+elem:  Prehledy
+Group score:  9
+
+elem:  adresa
+elem:  Písemnou
+elem:  korespondenci
+elem:  zasílejte
+elem:  OSVC
+elem:  a
+elem:  formuláre
+elem:  které
+elem:  jsou
+elem:  povinni
+elem:  predávat
+Group score:  7
+
+elem:  zamestnavatele
+elem:  Hromadné
+elem:  oznámení
+elem:  zamestnavatele
+elem:  Prihláška
+elem:  list
+elem:  zamestnavatele)
+elem:  adresujte
+elem:  laskave
+elem:  na:
+elem:  VZP
+elem:  CR
+Group score:  9.7
+
+elem:  zasílejte
+elem:  VZP
+elem:  CR
+elem:  regionální
+elem:  pobocka
+elem:  Praha
+elem:  Na
+elem:  Perštýne
+elem:  359/6
+Group score:  9.6
+
+elem:  VZP
+elem:  CR
+elem:  regionální
+elem:  pobocka
+elem:  11001
+elem:  Praha
+elem:  1.
+elem:  Nahoru
+elem:  ©
+elem:  2015
+elem:  VZP
+Group score:  12
+
+elem:  Více
+elem:  o
+elem:  cookies
+elem:  Domácnosti
+elem:  Podnikatelé
+elem:  Velké
+elem:  firmy
+elem:  Výrobci
+elem:  Verejná
+elem:  správa
+Group score:  4.6
+
+elem:  zákazníkum
+elem:  Poštovní
+elem:  prihrádka
+elem:  54
+elem:  65654
+elem:  Brno
+elem:  E.ON
+elem:  Energie
+elem:  a.s.
+elem:  E.ON
+elem:  Energie
+Group score:  6.9
+
+elem:  2151/6
+elem:  370
+elem:  01
+elem:  Ceské
+elem:  Budejovice
+elem:  7
+elem:  E.ON
+elem:  Energie
+elem:  a.s.
+Group score:  3.9
+
+elem:  01
+elem:  Ceské
+elem:  Budejovice
+elem:  Lidická
+elem:  36
+elem:  60200
+elem:  Brno
+elem:  E.ON
+elem:  Distribuce
+elem:  a.s.
+elem:  E.ON
+Group score:  11.4
+
+elem:  a.s.
+elem:  F.
+elem:  A.
+elem:  Gerstnera
+elem:  2151/6
+elem:  37001
+elem:  Ceské
+elem:  Budejovice
+elem:  E.ON
+elem:  Distribuce
+elem:  a.s.
+elem:  Lidická
+Group score:  12.1
+
+elem:  Gerstnera
+elem:  2151/6
+elem:  36
+elem:  659
+elem:  44
+elem:  Brno
+elem:  E.ON
+elem:  Ceská
+elem:  republika
+Group score:  4.9
+
+elem:  s.r.o.
+elem:  Lidická
+elem:  36
+elem:  659
+elem:  44
+elem:  Brno
+elem:  E.ON
+elem:  Servisní
+elem:  s.r.o.
+Group score:  3.5
+
+elem:  050
+elem:  910
+elem:  www.eon-servisni.cz
+elem:  Informacní
+elem:  centrum
+elem:  Vranov
+elem:  VE
+elem:  Vranov
+elem:  Havlíckovo
+Group score:  7.2
+
+elem:  www.eon-servisni.cz
+elem:  Informacní
+elem:  centrum
+elem:  nábreží
+elem:  458
+elem:  67103
+elem:  Vranov
+elem:  nad
+elem:  Dyjí
+elem:  www.eon.cz/vranov
+elem:  E.ONO
+elem:  násKontaktyKde
+elem:  nás
+Group score:  11.7
+
+elem:  adresy
+elem:  O
+elem:  skupine
+elem:  E.ON
+elem:  E.ON
+elem:  v
+elem:  Ceské
+elem:  republice
+elem:  E.ON
+elem:  ve
+elem:  svete
+elem:  Pro
+elem:  investory
+Group score:  11.4
+
+elem:  E.ON
+elem:  Pro
+elem:  partnery
+elem:  Kariéra
+elem:  Pracujte
+elem:  a
+elem:  absolventi
+elem:  Technici
+elem:  a
+elem:  montéri
+elem:  Péce
+elem:  o
+elem:  zákazníky
+Group score:  8.7
+
+elem:  04
+elem:  (pondelí
+elem:  až
+elem:  hodin)
+elem:  Infolinka
+elem:  a
+elem:  hlášení
+elem:  škod:
+elem:  +420
+elem:  488
+Group score:  4.2
+
+elem:  Odeslat
+elem:  Najít
+elem:  nejbližší
+elem:  pobocku
+elem:  Vyberte
+elem:  okres
+elem:  Vyberte
+elem:  pobocku
+elem:  Najít
+elem:  nejbližší
+Group score:  8
+
+elem:  Google
+elem:  Podmínky
+elem:  použití
+elem:  Nahlásit
+elem:  chybu
+elem:  v
+elem:  mape
+elem:  Mapa
+elem:  Satelitní
+elem:  Adresa
+elem:  UNIQA
+elem:  pojištovna
+Group score:  8.7
+
+elem:  Adresa
+elem:  (centrála):
+elem:  Evropská
+elem:  810/136
+elem:  16012
+elem:  Praha
+elem:  6
+elem:  E-mail:
+elem:  info@uniqa.cz
+elem:  Datová
+elem:  schránka:
+elem:  andcicx
+elem:  UNIQA
+Group score:  8.6
+
+elem:  16012
+elem:  pojištovna
+elem:  a.s.
+elem:  je
+elem:  zapsána
+elem:  v
+elem:  Praze
+elem:  oddíl
+elem:  B
+elem:  vložka
+elem:  2012.
+elem:  IC:
+elem:  49240480
+Group score:  5.9
+
+elem:  mužete
+elem:  vybrat
+elem:  tyto
+elem:  možnosti:
+elem:  jednorázový
+elem:  i
+elem:  trvalý
+elem:  príkaz
+elem:  k
+Group score:  3.6
+
+elem:  UNIQA
+elem:  pojištovna
+elem:  a.s.
+elem:  je
+elem:  zapsána
+elem:  u
+elem:  Mestského
+elem:  soudu
+elem:  v
+elem:  Praze
+elem:  oddíl
+elem:  B
+elem:  vložka
+Group score:  5.3
+
+elem:  údaju
+elem:  Nakládání
+elem:  s
+elem:  osobními
+elem:  údaji
+elem:  a
+elem:  jejich
+elem:  ochrane
+elem:  venujeme
+elem:  znacnou
+elem:  pozornost.
+elem:  Rídíme
+Group score:  7
+
+elem:  úpravou
+elem:  (zákon
+elem:  c.
+elem:  101/2000
+elem:  Sb.
+elem:  a
+elem:  související
+elem:  predpisy)
+elem:  a
+elem:  našimi
+elem:  interními
+Group score:  2.5
+
+elem:  Financní
+elem:  arbitr
+elem:  CR
+elem:  (Legerova
+elem:  1581/69
+elem:  11000
+elem:  Praha
+elem:  1
+elem:  www.finarbitr.cz).
+elem:  V
+elem:  prípade
+elem:  sporu
+Group score:  13.1
+
+elem:  Ceská
+elem:  obchodní
+elem:  inspekce
+elem:  (Štepánská
+elem:  567/15
+elem:  12000
+elem:  Praha
+elem:  2
+elem:  www.coi.cz).
+elem:  Pokud
+Group score:  11.4
+
+elem:  Ochrana
+elem:  osobních
+elem:  údaju
+elem:  Naše
+elem:  webové
+elem:  stránky
+elem:  využívají
+elem:  za
+elem:  úcelem
+elem:  dosažení
+Group score:  2.2
+
+elem:  Vodafone
+elem:  Úvodní
+elem:  stránka
+elem:  Hlavní
+elem:  menu
+elem:  VoláníInternetTelefony
+elem:  a
+elem:  zarízeníPodporaOsobní
+Group score:  2.9
+
+elem:  Vodafone
+elem:  Úvodní
+elem:  Firemní
+elem:  Košík
+elem:  Vyhledávání
+elem:  Muj
+elem:  Vodafone
+elem:  Úvod
+elem:  ›
+Group score:  4.6
+
+elem:  s.
+elem:  Sídlo
+elem:  spolecnosti:
+elem:  námestí
+elem:  Junkových
+elem:  2
+elem:  15500
+elem:  Praha
+elem:  5
+elem:  Recepce:
+elem:  +420
+elem:  271
+elem:  171
+Group score:  6
+
+elem:  CZ25788001
+elem:  zapsaná
+elem:  do
+elem:  obchodního
+elem:  rejstríku
+elem:  u
+elem:  Mestského
+elem:  soudu
+elem:  v
+elem:  Praze
+elem:  B.6064
+elem:  Císla
+Group score:  3.6
+
+elem:  CZ25788001
+elem:  zapsaná
+elem:  do
+elem:  obchodního
+elem:  rejstríku
+elem:  a
+elem:  spojení
+elem:  Osobní
+elem:  Firemní
+elem:  zákazníci
+elem:  Zákazníci
+elem:  OneNet
+Group score:  1.9
+
+elem:  77.
+elem:  nonstop
+elem:  Tip:
+elem:  Vyzkoušejte
+elem:  videochat
+elem:  a
+elem:  mluvte
+elem:  rovnou
+elem:  s
+Group score:  7
+
+elem:  00
+elem:  77.
+elem:  nonstop
+elem:  Tip:
+elem:  Jste
+elem:  u
+elem:  pocítace?
+elem:  Zkuste
+elem:  videochat
+Group score:  9.3
+
+elem:  00
+elem:  77.
+elem:  nonstop
+elem:  Tip:
+elem:  Jste
+elem:  a
+elem:  necekejte
+elem:  na
+elem:  lince.
+elem:  Neznáte
+elem:  svoje
+elem:  heslo
+elem:  pro
+Group score:  13.7
+
+elem:  Dotazy
+elem:  nám
+elem:  mužete
+elem:  také
+elem:  poslat
+elem:  na
+elem:  naši
+elem:  online
+elem:  podporu.
+elem:  Odpovedi
+Group score:  6.3
+
+elem:  Dotazy
+elem:  nám
+elem:  mužete
+elem:  také
+elem:  poslat
+elem:  na
+elem:  nejcastejší
+elem:  otázky
+elem:  najdete
+elem:  v
+elem:  Centru
+elem:  péce.
+elem:  Rádi
+Group score:  6.3
+
+elem:  mužete
+elem:  také
+elem:  poslat
+elem:  vám
+elem:  pomužeme
+elem:  i
+elem:  na
+elem:  Facebooku
+elem:  ci
+elem:  Twitteru.
+elem:  Ikona
+Group score:  6.3
+
+elem:  vám
+elem:  pomužeme
+elem:  Ze
+elem:  zahranicí:
+elem:  Volejte
+elem:  na
+elem:  +420
+elem:  776
+elem:  977
+Group score:  6.9
+
+elem:  tarifu.
+elem:  Více
+elem:  informací
+elem:  zde.
+elem:  Potrebujete
+elem:  v
+elem:  zahranicí
+elem:  naléhave
+elem:  pomoct?
+elem:  Pokud
+elem:  jste
+Group score:  3.6
+
+elem:  informací
+elem:  zde.
+elem:  Potrebujete
+elem:  mimo
+elem:  CR
+elem:  a
+elem:  potrebujete
+elem:  naléhave
+elem:  pomoci
+elem:  menit
+Group score:  8.7
+
+elem:  nám
+elem:  ze
+elem:  zahranicí
+elem:  zdarma
+elem:  zavolat
+elem:  na
+elem:  speciální
+elem:  císlo:
+elem:  +420
+elem:  776
+elem:  970
+elem:  219.
+Group score:  8.6
+
+elem:  jsme
+elem:  vám
+elem:  blíž.
+elem:  Neváhejte
+elem:  se
+elem:  na
+elem:  nás
+elem:  obrátit.
+elem:  Najít
+Group score:  2.9
+
+elem:  problém
+elem:  s
+elem:  telefonem
+elem:  ci
+elem:  tabletem
+elem:  na
+elem:  techto
+elem:  místech
+elem:  vám
+elem:  vždy
+elem:  rádi
+Group score:  8
+
+elem:  nebo
+elem:  zarízení?
+elem:  Spletli
+elem:  jsme
+elem:  se
+elem:  a
+elem:  vystavili
+elem:  vám
+elem:  špatné
+elem:  Vyúctování?
+elem:  Nebo
+elem:  vám
+Group score:  8.7
+
+elem:  vyplnte
+elem:  online
+elem:  formulár
+elem:  prípadne
+elem:  se
+elem:  za
+elem:  námi
+elem:  stavte
+elem:  v
+elem:  jedné
+elem:  z
+Group score:  8
+
+elem:  REKLAMOVAT
+elem:  ZARÍZENÍ
+elem:  Zjistete
+elem:  si
+elem:  opravy
+elem:  a
+elem:  reklamace
+elem:  Zjistete
+elem:  si
+elem:  informace
+elem:  zda
+Group score:  13.8
+
+elem:  už
+elem:  ceká
+elem:  Nebo
+elem:  se
+elem:  podívejte
+elem:  v
+elem:  jaké
+elem:  fázi
+elem:  je
+Group score:  3.6
+
+elem:  se
+elem:  podívejte
+elem:  oprava
+elem:  vašeho
+elem:  zarízení
+elem:  v
+elem:  servisním
+elem:  stredisku
+elem:  STAV
+elem:  NA
+elem:  PRODEJNE
+Group score:  7.3
+
+elem:  se
+elem:  podívejte
+elem:  oprava
+elem:  vašeho
+elem:  zarízení
+elem:  STAV
+elem:  V
+elem:  SERVISU
+elem:  Mohlo
+elem:  by
+elem:  se
+elem:  Vám
+elem:  hodit
+Group score:  11.4
+
+elem:  pro
+elem:  média
+elem:  Posílání
+elem:  smluv
+elem:  dodatku
+elem:  a
+elem:  formuláru
+elem:  Nastavení
+elem:  služeb
+elem:  a
+elem:  další
+elem:  požadavky
+elem:  Tísnová
+Group score:  3.6
+
+elem:  Dobít
+elem:  kredit
+elem:  Vše
+elem:  o
+elem:  nákupu
+elem:  v
+elem:  eShopu
+elem:  Mapa
+elem:  pokrytí
+Group score:  5.3
+
+elem:  pojmu
+elem:  Další
+elem:  užitecné
+elem:  odkazy
+elem:  Kontakty
+elem:  a
+elem:  císla
+elem:  Kontakty
+elem:  Prodejny
+elem:  Vodafonu
+elem:  Videochat
+elem:  Prejít
+Group score:  10.4
+
+elem:  rešení
+elem:  Absolutní
+elem:  vítez
+elem:  2016
+elem:  1.
+elem:  místo
+elem:  v
+elem:  kategorii
+elem:  Telekomunikace
+elem:  Nejlepší
+elem:  sít
+elem:  v
+elem:  testu
+Group score:  8.6
+
+elem:  ac
+elem:  tincidunt
+elem:  mi
+elem:  tincidunt
+elem:  eu.
+elem:  In
+elem:  magna
+elem:  tortor
+elem:  ultricies
+Group score:  11.4
+
+elem:  Nunc
+elem:  eu
+elem:  auctor
+elem:  nisi
+elem:  vitae
+elem:  in
+elem:  fringilla
+elem:  diam.
+elem:  Fusce
+elem:  sed
+elem:  mollis
+elem:  erat
+Group score:  16.5
+
+elem:  Nunc
+elem:  eu
+elem:  auctor
+elem:  nisi
+elem:  vitae
+elem:  a
+elem:  posuere
+elem:  tortor.
+elem:  Ut
+elem:  laoreet
+elem:  ex
+elem:  tortor
+Group score:  15.5
+
+elem:  himenaeos.
+elem:  Morbi
+elem:  luctus
+elem:  venenatis
+elem:  arcu.
+elem:  In
+elem:  sem
+elem:  justo
+elem:  iaculis
+elem:  vitae
+Group score:  11.4
+
+elem:  elit
+elem:  mauris
+elem:  lacinia
+elem:  non
+elem:  lacus
+elem:  in
+elem:  rhoncus
+elem:  lobortis
+elem:  velit.
+elem:  Maecenas
+Group score:  13.1
+
+elem:  non
+elem:  lacus
+elem:  ultrices
+elem:  tristique
+elem:  feugiat.
+elem:  In
+elem:  elementum
+elem:  ligula
+elem:  lobortis
+Group score:  11.4
+
+elem:  tristique
+elem:  feugiat.
+elem:  ullamcorper
+elem:  egestas.
+elem:  Vestibulum
+elem:  in
+elem:  tellus
+elem:  in
+elem:  massa
+elem:  faucibus
+Group score:  10.7
+
+elem:  nisi
+elem:  nibh
+elem:  pellentesque
+elem:  sed
+elem:  consectetur
+elem:  a
+elem:  pulvinar
+elem:  ut
+elem:  nisi.
+elem:  Nam
+Group score:  12.1
+
+elem:  eros
+elem:  nunc
+elem:  vitae
+elem:  quam.
+elem:  Nam
+elem:  a
+elem:  nunc
+elem:  tincidunt
+elem:  lectus
+elem:  pretium
+Group score:  12.1
+
+elem:  Phasellus
+elem:  egestas
+elem:  ultricies
+elem:  quam
+elem:  id
+elem:  porta
+elem:  tortor
+elem:  consectetur
+elem:  eu.
+elem:  Pellentesque
+elem:  dolor
+elem:  dolor
+Group score:  16.5
+
+elem:  diam
+elem:  dolor
+elem:  accumsan
+elem:  ac
+elem:  luctus
+elem:  in
+elem:  feugiat
+elem:  a
+elem:  elit.
+elem:  Sed
+Group score:  11.4
+
+elem:  metus.
+elem:  Donec
+elem:  quis
+elem:  ultricies
+elem:  neque.
+elem:  In
+elem:  neque
+elem:  mi
+elem:  viverra
+Group score:  9.7
+
+elem:  congue.
+elem:  Morbi
+elem:  ornare
+elem:  mollis
+elem:  libero
+elem:  a
+elem:  ornare
+elem:  metus
+elem:  iaculis
+elem:  vel.
+Group score:  10.4
+
+elem:  mattis.
+elem:  ahoj
+elem:  jak
+elem:  to
+elem:  jde
+elem:  Tupesy
+elem:  68707
+elem:  Tupesy
+elem:  foobar
+elem:  12
+elem:  foobar
+elem:  Lorem
+elem:  ipsum
+Group score:  22.6
+
+elem:  sit
+elem:  amet
+elem:  consectetur
+elem:  adipiscing
+elem:  elit.
+elem:  In
+elem:  viverra
+elem:  nisl
+elem:  vitae
+elem:  laoreet
+elem:  mattis
+elem:  nunc
+Group score:  16.5
+
+elem:  nisl
+elem:  vehicula
+elem:  aliquam
+elem:  orci
+elem:  dui.
+elem:  Uherské
+elem:  Hradiště
+elem:  68605
+elem:  Morbi
+elem:  viverra
+elem:  fermentum
+elem:  nibh
+elem:  dictum
+Group score:  20.3
+
+elem:  vel
+elem:  neque.
+elem:  Sed
+elem:  cursus
+elem:  magna
+elem:  in
+elem:  lectus
+elem:  venenatis
+elem:  eget
+elem:  porttitor
+elem:  felis
+Group score:  14.8
+
+elem:  porttitor
+elem:  lacus
+elem:  iaculis
+elem:  pulvinar.
+elem:  Zlin
+elem:  Brno
+elem:  68707
+elem:  Sed
+elem:  dui
+elem:  velit
+elem:  ultricies
+elem:  et
+Group score:  19.3
+
+elem:  id
+elem:  pulvinar
+elem:  sit
+elem:  amet
+elem:  orci.
+elem:  Brno
+elem:  68707
+elem:  Tupesy
+elem:  12
+elem:  Quisque
+elem:  mauris
+Group score:  19.2
+
+elem:  placerat
+elem:  odio
+elem:  sed
+elem:  convallis
+elem:  urna.
+elem:  In
+elem:  hac
+elem:  habitasse
+elem:  platea
+elem:  dictumst.
+elem:  Ut
+elem:  tempus
+Group score:  14.8
+
+elem:  placerat
+elem:  odio
+elem:  sed
+elem:  convallis
+elem:  urna.
+elem:  porta
+elem:  vestibulum.
+elem:  Lorem
+elem:  ipsum
+elem:  dolor
+elem:  sit
+elem:  amet
+Group score:  14.8
+
+elem:  mollis
+elem:  magna
+elem:  ipsum
+elem:  ornare
+elem:  quam
+elem:  a
+elem:  dignissim
+elem:  nulla
+elem:  justo
+elem:  eu
+elem:  massa.
+Group score:  13.8
+
+elem:  mi.
+elem:  Vestibulum
+elem:  ante
+elem:  ipsum
+elem:  primis
+elem:  in
+elem:  faucibus
+elem:  orci
+elem:  luctus
+elem:  et
+elem:  ultrices
+elem:  posuere
+Group score:  16.5
+
+elem:  orci
+elem:  quis
+elem:  eros
+elem:  tempus
+elem:  facilisis
+elem:  a
+elem:  consectetur
+elem:  mauris.
+elem:  Vivamus
+Group score:  10.4
+
+elem:  molestie
+elem:  lacus
+elem:  at
+elem:  faucibus.
+elem:  Integer
+elem:  in
+elem:  urna
+elem:  euismod
+elem:  sapien
+elem:  viverra
+elem:  dictum
+elem:  eu
+Group score:  16.5
+
+elem:  vitae
+elem:  odio.
+elem:  Praesent
+elem:  sed
+elem:  ipsum
+elem:  in
+elem:  sem
+elem:  eleifend
+elem:  imperdiet
+Group score:  11.4
+
+elem:  justo
+elem:  quis
+elem:  sagittis
+elem:  laoreet
+elem:  odio.
+elem:  In
+elem:  sed
+elem:  arcu
+elem:  sit
+elem:  amet
+elem:  dui
+elem:  laoreet
+Group score:  16.5
+
+elem:  non
+elem:  tincidunt
+elem:  ipsum.
+elem:  non
+elem:  enim
+elem:  porta
+elem:  congue.
+elem:  Pellentesque
+elem:  quis
+elem:  congue
+Group score:  11.4
+
+elem:  metus.
+elem:  Curabitur
+elem:  hendrerit
+elem:  scelerisque
+elem:  dolor
+elem:  in
+elem:  semper
+elem:  metus
+elem:  suscipit
+Group score:  11.4
+
+elem:  mauris
+elem:  elementum
+elem:  iaculis
+elem:  volutpat.
+elem:  Proin
+elem:  a
+elem:  mi
+elem:  nec
+elem:  justo
+elem:  varius
+elem:  dapibus.
+Group score:  12.1
+
+elem:  tincidunt
+elem:  quis
+elem:  tristique
+elem:  dolor.
+elem:  Vestibulum
+elem:  a
+elem:  rhoncus
+elem:  ante.
+elem:  Integer
+elem:  rhoncus
+Group score:  10.4
+
+elem:  finibus
+elem:  purus
+elem:  metus
+elem:  ultrices
+elem:  urna
+elem:  a
+elem:  consequat
+elem:  dui
+elem:  magna
+elem:  sed
+Group score:  13.8
+
+elem:  faucibus
+elem:  magna
+elem:  tempus
+elem:  sed.
+elem:  Donec
+elem:  in
+elem:  justo
+elem:  ullamcorper
+elem:  eleifend
+Group score:  11.4
+
+elem:  ridiculus
+elem:  mus.
+elem:  Duis
+elem:  cursus
+elem:  velit
+elem:  a
+elem:  dignissim
+elem:  interdum.
+elem:  Mauris
+elem:  congue
+Group score:  10.4
+
+elem:  accumsan
+elem:  tortor
+elem:  sit
+elem:  amet
+elem:  volutpat
+elem:  porta
+elem:  ante
+elem:  erat
+elem:  volutpat
+Group score:  13.1
+
+elem:  mauris.
+elem:  Curabitur
+elem:  nisi
+elem:  nisi
+elem:  placerat
+elem:  a
+elem:  tortor
+elem:  ac
+elem:  mollis
+elem:  aliquam
+Group score:  12.1
+
+elem:  luctus
+elem:  nunc
+elem:  nisl
+elem:  facilisis
+elem:  diam
+elem:  a
+elem:  malesuada
+elem:  nisi
+elem:  ligula
+elem:  nec
+elem:  sapien.
+Group score:  13.8
+
+elem:  efficitur
+elem:  orci
+elem:  ut
+elem:  semper
+elem:  augue.
+elem:  In
+elem:  a
+elem:  consequat
+elem:  dolor
+elem:  et
+elem:  iaculis
+Group score:  13.1
+
+elem:  quam
+elem:  magna
+elem:  ut
+elem:  est.
+elem:  Nulla
+elem:  in
+elem:  consequat
+elem:  quam.
+elem:  Nullam
+elem:  elit
+elem:  tellus
+elem:  cursus
+Group score:  14.8
+
+elem:  ut
+elem:  est.
+elem:  Nulla
+elem:  mattis
+elem:  sapien
+elem:  porta
+elem:  suscipit
+elem:  dapibus
+elem:  libero.
+elem:  Donec
+Group score:  11.4
+
+elem:  lobortis.
+elem:  Fusce
+elem:  aliquam
+elem:  at
+elem:  enim
+elem:  in
+elem:  porttitor.
+elem:  Phasellus
+elem:  quam
+elem:  justo
+Group score:  11.4
+
+elem:  feugiat
+elem:  dui
+elem:  sit
+elem:  amet
+elem:  mi
+elem:  porta
+elem:  viverra.
+elem:  Nulla
+elem:  sed
+elem:  nisi
+Group score:  13.1
+
+elem:  feugiat
+elem:  dui
+elem:  sit
+elem:  amet
+elem:  mi
+elem:  a
+elem:  turpis
+elem:  tempor
+elem:  vehicula
+elem:  sit
+elem:  amet
+elem:  hendrerit
+Group score:  17.2
+
+elem:  sodales
+elem:  lectus
+elem:  pharetra
+elem:  eget.
+elem:  Nunc
+elem:  in
+elem:  dui
+elem:  nibh.
+elem:  Phasellus
+Group score:  9.7
+
+elem:  imperdiet
+elem:  nec.
+elem:  Pellentesque
+elem:  fermentum
+elem:  augue
+elem:  a
+elem:  pellentesque
+elem:  porta.
+elem:  Cras
+elem:  rutrum
+elem:  consequat
+elem:  mi
+Group score:  13.8
+
+elem:  dapibus.
+elem:  Mauris
+elem:  et
+elem:  massa
+elem:  nulla.
+elem:  In
+elem:  ex
+elem:  ligula
+elem:  cursus
+elem:  eleifend
+elem:  aliquet
+elem:  posuere
+Group score:  14.8
+
+elem:  lorem.
+elem:  Duis
+elem:  nibh
+elem:  quam
+elem:  posuere
+elem:  in
+elem:  accumsan
+elem:  eu
+elem:  bibendum
+elem:  ac
+elem:  diam.
+Group score:  13.1
+
+elem:  neque.
+elem:  Vestibulum
+elem:  leo.
+elem:  Integer
+elem:  luctus
+elem:  porta
+elem:  lectus.
+elem:  Quisque
+elem:  non
+Group score:  8
+
+elem:  placerat.
+elem:  Nam
+elem:  pellentesque
+elem:  neque
+elem:  massa
+elem:  in
+elem:  semper
+elem:  lectus
+elem:  volutpat
+elem:  sit
+elem:  amet.
+Group score:  13.1
+
+elem:  placerat.
+elem:  Nam
+elem:  pellentesque
+elem:  neque
+elem:  massa
+elem:  In
+elem:  non
+elem:  sem
+elem:  massa.
+elem:  Sed
+elem:  tempus
+elem:  sapien
+Group score:  14.8
+
+elem:  eros
+elem:  nunc
+elem:  vehicula
+elem:  vitae
+elem:  eros
+elem:  in
+elem:  ultricies
+elem:  feugiat
+elem:  arcu.
+elem:  Etiam
+elem:  mollis
+elem:  nibh
+Group score:  16.5
+
+elem:  suscipit
+elem:  vestibulum.
+elem:  Nam
+elem:  volutpat
+elem:  turpis
+elem:  a
+elem:  ex
+elem:  aliquam
+elem:  iaculis.
+Group score:  8.7
+
+elem:  pharetra
+elem:  tempus.
+elem:  eleifend
+elem:  elementum
+elem:  nibh
+elem:  in
+elem:  pretium
+elem:  eros.
+elem:  Nullam
+Group score:  9.7
+
+elem:  convallis
+elem:  justo.
+elem:  Maecenas
+elem:  nec
+elem:  leo
+elem:  a
+elem:  leo
+elem:  rhoncus
+elem:  porttitor
+elem:  sit
+elem:  amet
+elem:  eu
+Group score:  15.5
+
+elem:  non
+elem:  tristique
+elem:  vel
+elem:  magna.
+elem:  Vivamus
+elem:  a
+elem:  nunc
+elem:  leo.
+elem:  Morbi
+Group score:  8.7
+
+elem:  lectus.
+elem:  Fusce
+elem:  cursus
+elem:  suscipit
+elem:  tortor
+elem:  porta
+elem:  in.
+elem:  Ut
+elem:  tempor
+elem:  vel
+elem:  urna
+elem:  ac
+Group score:  14.8
+
+elem:  rutrum
+elem:  erat
+elem:  efficitur
+elem:  a.
+elem:  Fusce
+elem:  a
+elem:  posuere
+elem:  dui.
+elem:  Sed
+Group score:  8.7
+
+elem:  id
+elem:  fringilla
+elem:  mi
+elem:  congue
+elem:  in.
+elem:  Tupesy
+elem:  68707
+elem:  Tupesy
+elem:  foobar
+Group score:  13.5
+
+elem:  nostra
+elem:  per
+elem:  inceptos
+elem:  himenaeos.
+elem:  Donec
+elem:  in
+elem:  odio
+elem:  vestibulum
+elem:  fringilla
+elem:  quam
+Group score:  13.1
+
+elem:  tortor
+elem:  id
+elem:  volutpat
+elem:  dolor
+elem:  elit
+elem:  in
+elem:  lectus.
+elem:  Cras
+elem:  in
+elem:  ornare
+elem:  mauris
+Group score:  14.1
+
+elem:  mauris.
+elem:  Suspendisse
+elem:  vitae
+elem:  eleifend
+elem:  velit.
+elem:  In
+elem:  vel
+elem:  semper
+elem:  sem.
+elem:  Nulla
+elem:  sed
+Group score:  11.4
+
+elem:  vitae
+elem:  eleifend
+elem:  velit.
+elem:  libero
+elem:  ante.
+elem:  In
+elem:  in
+elem:  nulla
+elem:  quis
+elem:  velit
+elem:  pulvinar
+Group score:  12.4
+
+elem:  velit.
+elem:  libero
+elem:  ante.
+elem:  feugiat
+elem:  non
+elem:  in
+elem:  odio.
+elem:  Fusce
+elem:  sit
+elem:  amet
+Group score:  9.7
+
+elem:  velit.
+elem:  libero
+elem:  ante.
+elem:  feugiat
+elem:  non
+elem:  porta
+elem:  diam.
+elem:  Nam
+elem:  accumsan
+elem:  lacus
+elem:  est
+elem:  eget
+Group score:  13.1
+
+elem:  sit
+elem:  amet
+elem:  venenatis
+elem:  tortor
+elem:  nisi
+elem:  in
+elem:  lorem.
+elem:  Vivamus
+elem:  euismod
+elem:  elementum
+elem:  urna
+Group score:  14.8
+
+elem:  nec.
+elem:  Fusce
+elem:  convallis
+elem:  massa
+elem:  lectus
+elem:  a
+elem:  euismod
+elem:  neque
+elem:  vulputate
+Group score:  10.4
+
+elem:  et
+elem:  lobortis
+elem:  rhoncus
+elem:  nunc.
+elem:  Integer
+elem:  in
+elem:  tristique
+elem:  neque.
+elem:  Phasellus
+elem:  eu
+elem:  nibh
+elem:  quis
+Group score:  14.8
+
+elem:  dui
+elem:  non
+elem:  facilisis
+elem:  ipsum
+elem:  libero
+elem:  in
+elem:  turpis.
+elem:  Nullam
+elem:  aliquet
+Group score:  11.4
+
+elem:  dui
+elem:  non
+elem:  facilisis
+elem:  ipsum
+elem:  libero
+elem:  in
+elem:  nisi
+elem:  hendrerit
+elem:  cursus.
+elem:  Aliquam
+elem:  id
+elem:  nunc
+Group score:  16.5
+
+elem:  sollicitudin
+elem:  est
+elem:  elit
+elem:  elementum
+elem:  ligula
+elem:  in
+elem:  ultricies
+elem:  ipsum
+elem:  enim
+elem:  at
+Group score:  14.8
+
+elem:  viverra
+elem:  ligula.
+elem:  Aenean
+elem:  ut
+elem:  arcu
+elem:  a
+elem:  sapien
+elem:  sodales
+elem:  sagittis.
+elem:  Aliquam
+Group score:  10.4
+
+elem:  tincidunt.
+elem:  Ut
+elem:  finibus
+elem:  vestibulum
+elem:  ex
+elem:  a
+elem:  hendrerit.
+elem:  Pellentesque
+elem:  ullamcorper
+elem:  ante
+elem:  nec
+elem:  aliquet
+Group score:  13.8
+
+elem:  semper
+elem:  augue
+elem:  iaculis
+elem:  ac.
+elem:  Nullam
+elem:  in
+elem:  nisl
+elem:  sit
+elem:  amet
+elem:  risus
+Group score:  13.1
+
+elem:  pharetra
+elem:  finibus.
+elem:  Ut
+elem:  vitae
+elem:  orci
+elem:  a
+elem:  est
+elem:  elementum
+elem:  eleifend
+elem:  vitae
+elem:  non
+Group score:  13.8
+
+elem:  nunc.
+elem:  Mauris
+elem:  sit
+elem:  amet
+elem:  justo
+elem:  in
+elem:  nisi
+elem:  placerat
+elem:  scelerisque
+Group score:  11.4
+
+elem:  nunc.
+elem:  Mauris
+elem:  sit
+elem:  amet
+elem:  justo
+elem:  in
+elem:  et
+elem:  orci.
+elem:  Nam
+elem:  congue
+elem:  ac
+elem:  magna
+Group score:  14.8
+
+elem:  libero.
+elem:  Nullam
+elem:  pellentesque
+elem:  vulputate
+elem:  enim
+elem:  a
+elem:  sollicitudin
+elem:  tellus.
+elem:  Quisque
+Group score:  8.7
+
+elem:  tincidunt
+elem:  metus
+elem:  lorem
+elem:  cursus
+elem:  urna
+elem:  a
+elem:  accumsan
+elem:  neque
+elem:  tellus
+elem:  vitae
+elem:  leo.
+Group score:  13.8
+
+elem:  maximus
+elem:  nisl
+elem:  sit
+elem:  amet
+elem:  turpis
+elem:  porta
+elem:  eu
+elem:  ultricies
+elem:  ipsum
+elem:  vestibulum.
+elem:  Vivamus
+elem:  non
+Group score:  16.5
+
+elem:  ac
+elem:  nulla
+elem:  vehicula
+elem:  dapibus.
+elem:  Suspendisse
+elem:  in
+elem:  lorem
+elem:  consequat
+elem:  scelerisque
+elem:  orci
+elem:  ut
+elem:  maximus
+Group score:  16.5
+
+elem:  vehicula
+elem:  dapibus.
+elem:  Suspendisse
+elem:  orci.
+elem:  Proin
+elem:  porta
+elem:  gravida
+elem:  velit
+elem:  eget
+elem:  mollis.
+Group score:  9.7
+
+elem:  gravida
+elem:  malesuada.
+elem:  Fusce
+elem:  nec
+elem:  quam
+elem:  in
+elem:  lacus
+elem:  bibendum
+elem:  euismod.
+elem:  Sed
+elem:  placerat
+elem:  ex
+Group score:  14.8
+
+elem:  suscipit
+elem:  odio
+elem:  vulputate
+elem:  ut.
+elem:  Nulla
+elem:  in
+elem:  libero
+elem:  sollicitudin
+elem:  posuere
+elem:  nisl
+elem:  ac
+elem:  scelerisque
+Group score:  16.5
+
+elem:  dui.
+elem:  Ut
+elem:  lacinia
+elem:  urna
+elem:  quam
+elem:  in
+elem:  laoreet
+elem:  eros
+elem:  gravida
+Group score:  11.4
+
+elem:  finibus
+elem:  porttitor
+elem:  libero.
+elem:  Nunc
+elem:  interdum
+elem:  in
+elem:  purus
+elem:  non
+elem:  sagittis.
+Group score:  9.7
+
+elem:  diam.
+elem:  Ut
+elem:  egestas
+elem:  convallis
+elem:  diam
+elem:  a
+elem:  tincidunt.
+elem:  Mauris
+elem:  risus
+elem:  est
+elem:  dictum
+elem:  et
+Group score:  13.8
+
+elem:  sem
+elem:  vitae
+elem:  convallis
+elem:  arcu
+elem:  ante
+elem:  in
+elem:  nisl.
+elem:  Duis
+elem:  ut
+Group score:  11.4
+
+elem:  eu
+elem:  tortor
+elem:  consectetur
+elem:  sollicitudin.
+elem:  Integer
+elem:  in
+elem:  finibus
+elem:  massa
+elem:  id
+elem:  tincidunt
+elem:  enim.
+elem:  Aenean
+Group score:  14.8
+
+elem:  sollicitudin.
+elem:  Integer
+elem:  vestibulum
+elem:  tincidunt
+elem:  eros
+elem:  in
+elem:  interdum
+elem:  nisl
+elem:  sagittis
+Group score:  11.4
+
+elem:  erat
+elem:  consectetur
+elem:  quam
+elem:  venenatis
+elem:  gravida.
+elem:  In
+elem:  ac
+elem:  massa
+elem:  sit
+elem:  amet
+elem:  massa
+elem:  aliquet
+Group score:  16.5
+
+elem:  sagittis
+elem:  dignissim.
+elem:  Nam
+elem:  feugiat
+elem:  erat
+elem:  in
+elem:  quam
+elem:  molestie
+elem:  consequat.
+elem:  Morbi
+elem:  in
+elem:  aliquam
+Group score:  14.1
+
+elem:  rhoncus
+elem:  suscipit.
+elem:  Sed
+elem:  mattis
+elem:  nulla
+elem:  in
+elem:  lorem
+elem:  placerat
+elem:  dictum.
+elem:  Mauris
+elem:  commodo
+elem:  luctus
+Group score:  14.8
+
+elem:  quam
+elem:  nisl
+elem:  lobortis
+elem:  ut
+elem:  blandit
+elem:  a
+elem:  aliquet
+elem:  eget
+elem:  lorem.
+elem:  Phasellus
+elem:  id
+Group score:  13.8
+
+elem:  mauris.
+elem:  Suspendisse
+elem:  eu
+elem:  convallis
+elem:  ipsum
+elem:  in
+elem:  molestie
+elem:  magna.
+elem:  Pellentesque
+elem:  vestibulum
+elem:  massa
+Group score:  13.1
+
+elem:  vehicula
+elem:  lorem.
+elem:  Proin
+elem:  non
+elem:  dolor
+elem:  a
+elem:  est
+elem:  ullamcorper
+elem:  finibus.
+elem:  Sed
+elem:  in
+elem:  arcu
+Group score:  13.1
+
+elem:  fermentum.
+elem:  Mauris
+elem:  porttitor
+elem:  vitae
+elem:  sem
+elem:  in
+elem:  auctor.
+elem:  Donec
+elem:  convallis
+elem:  felis
+Group score:  11.4
+
+elem:  eleifend
+elem:  turpis.
+elem:  Nunc
+elem:  vehicula
+elem:  neque
+elem:  porta
+elem:  lacus
+elem:  volutpat
+elem:  rhoncus.
+Group score:  9.7
+
+elem:  eu.
+elem:  Nunc
+elem:  odio
+elem:  ex
+elem:  venenatis
+elem:  a
+elem:  est
+elem:  et
+elem:  facilisis
+elem:  commodo
+elem:  risus.
+elem:  Curabitur
+Group score:  13.8
+
+elem:  congue
+elem:  magna
+elem:  convallis
+elem:  laoreet
+elem:  quis
+elem:  in
+elem:  turpis.
+elem:  Vivamus
+elem:  sed
+elem:  accumsan
+elem:  metus.
+elem:  Curabitur
+Group score:  14.8
+
+elem:  dapibus
+elem:  nunc
+elem:  eu
+elem:  commodo
+elem:  mi.
+elem:  In
+elem:  vehicula
+elem:  dolor
+elem:  et
+Group score:  11.4
+
+elem:  sit
+elem:  amet
+elem:  ullamcorper
+elem:  neque.
+elem:  Phasellus
+elem:  a
+elem:  feugiat
+elem:  magna.
+elem:  Suspendisse
+elem:  aliquam
+elem:  nulla
+Group score:  12.1
+
+elem:  posuere.
+elem:  Donec
+elem:  gravida
+elem:  rhoncus
+elem:  augue
+elem:  in
+elem:  volutpat.
+elem:  Suspendisse
+elem:  magna
+elem:  risus
+elem:  ultrices
+Group score:  13.1
+
+elem:  nisi
+elem:  non
+elem:  porttitor.
+elem:  quis
+elem:  ex
+elem:  a
+elem:  consectetur.
+elem:  Morbi
+elem:  aliquet
+elem:  a
+elem:  orci
+Group score:  10.4
+
+elem:  fringilla.
+elem:  Praesent
+elem:  tempus
+elem:  pulvinar
+elem:  eros
+elem:  a
+elem:  convallis
+elem:  ligula
+elem:  feugiat
+elem:  eu.
+elem:  Aenean
+Group score:  12.1
+
+elem:  fermentum
+elem:  eros
+elem:  augue
+elem:  tempus
+elem:  ipsum
+elem:  a
+elem:  suscipit
+elem:  ex
+elem:  tellus
+elem:  ut
+Group score:  13.8
+
+elem:  eros
+elem:  augue
+elem:  tempus
+elem:  ipsum
+elem:  quam.
+elem:  In
+elem:  id
+elem:  euismod
+elem:  turpis
+elem:  eu
+elem:  ullamcorper
+Group score:  14.8
+
+elem:  fames
+elem:  ac
+elem:  ante
+elem:  ipsum
+elem:  primis
+elem:  in
+elem:  faucibus.
+elem:  Nullam
+elem:  dapibus
+elem:  vehicula
+elem:  ante
+Group score:  14.8
+
+elem:  ex
+elem:  eget
+elem:  tincidunt
+elem:  erat.
+elem:  Phasellus
+elem:  a
+elem:  neque
+elem:  a
+elem:  est
+elem:  volutpat
+elem:  congue
+elem:  vel
+elem:  vel
+Group score:  15.5
+
+elem:  eget
+elem:  nisl
+elem:  augue.
+elem:  Duis
+elem:  Vivamus
+elem:  a
+elem:  porta
+elem:  risus.
+elem:  Nullam
+elem:  tellus
+elem:  augue
+elem:  gravida
+Group score:  13.1
+
+elem:  eget
+elem:  nisl
+elem:  augue.
+elem:  Duis
+elem:  Vivamus
+elem:  in
+elem:  ultrices
+elem:  vitae
+elem:  semper
+elem:  eget
+elem:  odio.
+elem:  Integer
+Group score:  14.8
+
+elem:  tortor.
+elem:  Aenean
+elem:  purus
+elem:  augue
+elem:  porttitor
+elem:  a
+elem:  euismod
+elem:  laoreet
+elem:  dictum
+Group score:  10.4
+
+elem:  dui.
+elem:  Suspendisse
+elem:  tristique
+elem:  non
+elem:  ante
+elem:  in
+elem:  ultrices.
+elem:  In
+elem:  sem
+elem:  mauris
+elem:  tempor.
+Group score:  10.7
